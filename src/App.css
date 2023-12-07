@@ -1,0 +1,53 @@
+/* global.css */
+
+@import url('https://fonts.maateen.me/bangla/font.css');
+
+body {
+  font-family: 'Bangla', Arial, sans-serif !important;
+
+}
+
+.primary-bg {
+  background: #fe0000;
+}
+
+.social-icons {
+  margin-top: 10px;
+  background: #fe0000;
+  width: 82%;
+  border-radius: 12px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-around;
+  padding: 4px 6px;
+  font-size: 23px;
+  box-shadow: 0px -9px 9px 0px rgba(250, 254, 33, 0.87);
+
+}
+
+.social-icons i {
+  transition: color 0.3s ease;
+}
+
+
+.social-icons a {
+  background: white;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.red-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+.active {
+  background-color: aqua;
+}
