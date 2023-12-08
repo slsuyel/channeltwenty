@@ -13,9 +13,7 @@ const categories = [
     {
         label: 'জাতীয়',
         name: 'national',
-        subcategories: [
-            { label: 'নির্বাচন সংবাদ', name: 'election-news' },
-        ],
+
     }, {
         label: 'নির্বাচন সংবাদ',
         name: 'election-news'
@@ -85,7 +83,7 @@ const categories = [
 
 const CategoryNavbar = () => {
     return (
-        <nav className="fs-5 navbar-expand-lg p-0 pt-0 px-4" style={{ background: '#000028' }}>
+        <nav className="d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4" style={{ background: '#000028' }}>
 
             <button className="navbar-toggler pt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 {/* <span className="navbar-toggler-icon "></span> */}

@@ -13,11 +13,18 @@ const NavbarMenu = () => {
     };
 
 
-
+    /* <button type="button" className="btn btn-primary rounded-0 text-end" onClick={toggleOffcanvas}>
+                    <span className="text-white"><i className="fa-solid fa-bars"></i></span>
+                </button> */
 
     return (
-        <Navbar collapseOnSelect expand="lg" className='bg-white fw-bold navbar navbar-expand-lg navbar-light px-3 my-3 align-items-center' variant="light" expanded={navbarExpanded}>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav " onClick={() => setNavbarExpanded(!navbarExpanded)} />
+        <Navbar collapseOnSelect expand="lg" className='bg-white fw-bold navbar navbar-expand-lg navbar-light px-3 align-items-center' variant="light" expanded={navbarExpanded}>
+
+            <Navbar.Toggle aria-controls="responsive-navbar-nav " onClick={() => setNavbarExpanded(!navbarExpanded)} className='border-0 collapsed navbar-toggler p-1 rounded-0 text-bg-primary' />
+
+
+
+
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="justify-content-evenly navbar-nav w-100 mt-2">
 
