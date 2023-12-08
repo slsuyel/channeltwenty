@@ -10,6 +10,7 @@ import CategoryProgram from "../pages/Home/Program/CategoryProgram";
 import Archive from "../pages/Home/Archive/Archive";
 import Login from "../components/Login";
 import ScrollToTop from "../components/ScrollToTop";
+import NewsHome from "../pages/News/NewsHome";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/news",
+                element: <NewsHome />,
             },
 
 
