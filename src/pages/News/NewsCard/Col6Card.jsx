@@ -42,22 +42,22 @@ const Col6Card = ({ tittle }) => {
 
                 <div className='col-md-6 mx-auto row'>
                     <div className='col-md-6'>
-                        <Link to='/' className='text-decoration-none '>
+                        <Link to='/news/12' className='text-decoration-none '>
                             <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
                             <h6 className='fw-bold mb-0 mt-1 text-dark'>  হাতিয়ায় নৌকা প্রতীক প্রার্থীর উঠান বৈঠক</h6></Link>
                     </div>
                     <div className='col-md-6'>
-                        <Link to='/' className='text-decoration-none '>
+                        <Link to='/news/12' className='text-decoration-none '>
                             <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
                             <h6 className='fw-bold mb-0 mt-1 text-dark'>  হাতিয়ায় নৌকা প্রতীক প্রার্থীর উঠান বৈঠক</h6></Link>
                     </div>
                     <div className='col-md-6'>
-                        <Link to='/' className='text-decoration-none '>
+                        <Link to='/news/12' className='text-decoration-none '>
                             <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
                             <h6 className='fw-bold mb-0 mt-1 text-dark'>  হাতিয়ায় নৌকা প্রতীক প্রার্থীর উঠান বৈঠক</h6></Link>
                     </div>
                     <div className='col-md-6'>
-                        <Link to='/' className='text-decoration-none '>
+                        <Link to='/news/12' className='text-decoration-none '>
                             <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
                             <h6 className='fw-bold mb-0 mt-1 text-dark'>  হাতিয়ায় নৌকা প্রতীক প্রার্থীর উঠান বৈঠক</h6></Link>
                     </div>

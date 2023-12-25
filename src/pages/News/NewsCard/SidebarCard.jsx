@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 const newsItems = [
     {
         imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
@@ -29,16 +30,16 @@ const newsItems = [
     },
 
 ];
-const SidebarCard = ({ tittle }) => {
+const SidebarCard = ({ title }) => {
     return (
         <div className='col-md-3'>
-            <div className="mb-1 mx-auto ">
+            <div className="mb-1 mx-auto">
                 <h3
                     className="border-2 border-bottom border-danger"
                     style={{ paddingLeft: 0 }}
                 >
                     <span className="fs-5 primary-bg px-2 py-1 text-nowrap text-white">
-                        {tittle}
+                        {title}
                     </span>
                 </h3>
             </div>
@@ -57,21 +58,20 @@ const SidebarCard = ({ tittle }) => {
                         />
                     </div>
                     <div>
-                        <a
+                        {/* Replace <a> with <Link> */}
+                        <Link
                             className="text-decoration-none text-dark"
-                            href={`/posts/${newsItem.postId}`}
+                            to={'/news/12'}
                         >
                             <h6 className="fw-bold">
                                 {newsItem.title}
                             </h6>
                             <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                        </a>
-
+                        </Link>
                     </div>
                 </div>
             ))}
         </div>
-
     );
 };
 

@@ -11,6 +11,7 @@ import Archive from "../pages/Home/Archive/Archive";
 import Login from "../components/Login";
 import ScrollToTop from "../components/ScrollToTop";
 import NewsHome from "../pages/News/NewsHome";
+import SingleNews from "../pages/News/NewsCard/SingleNews/SingleNews";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path: "/news",
                 element: <NewsHome />,
+            },
+            {
+                path: "/news/12",
+                element: <SingleNews />,
             },
 
 

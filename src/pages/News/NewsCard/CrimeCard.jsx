@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const newsItems = [
     {
         imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
@@ -40,7 +41,7 @@ const CrimeCard = () => {
             <div className='col-md-6'>
 
                 <div className=" position-relative">
-                    <a href="/posts/64ecf1ddc4cc5ecd11e30627">
+                    <Link to='/news/12' >
 
                         <div className="img-contain">
                             <img
@@ -49,7 +50,7 @@ const CrimeCard = () => {
                             />
                             <div className="overlay" />
                         </div>
-                    </a>
+                    </Link>
                     <div className="position-absolute title-text">
 
                         <a
@@ -64,7 +65,7 @@ const CrimeCard = () => {
                     </div>
                 </div>
                 <div className=" position-relative">
-                    <a href="/posts/64ecf1ddc4cc5ecd11e30627">
+                    <Link to='/news/12' >
 
                         <div className="img-contain">
                             <img
@@ -73,16 +74,15 @@ const CrimeCard = () => {
                             />
                             <div className="overlay" />
                         </div>
-                    </a>
+                    </Link>
                     <div className="position-absolute title-text">
 
-                        <a className="text-decoration-none text-white "
-                            href="/posts/64ecf1ddc4cc5ecd11e30627"  >
+                        <Link to='/news/12' className="text-decoration-none text-white " >
 
                             <h5 className="">
                                 কনটেইনার টার্মিনাল নির্মাণে মার্সকের প্রস্তাব বিবেচনা করবে সরকার
                             </h5>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -103,17 +103,15 @@ const CrimeCard = () => {
                             />
                         </div>
                         <div>
-                            <a
-                                className="text-decoration-none text-dark"
-                                href={`/posts/${newsItem.postId}`}
-                            >
+                            <Link to='/news/12'
+                                className="text-decoration-none text-dark">
                                 <h6 className="fw-normal">
                                     {newsItem.title}
                                 </h6>
                                 <p style={{ color: '#0004f4' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
                                     ডিসেম্বর ২৪, ২০২৩</p>
 
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 ))}
