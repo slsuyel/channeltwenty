@@ -1,4 +1,5 @@
 import getgp from '../../assets/images/get-it-on-play.png'
+import SocialIconsMenu from '../../components/SocialIconsMenu';
 const Footer = () => {
 
     return (
@@ -32,26 +33,7 @@ const Footer = () => {
                         <p className='fw-semibold mb-0'>01600321220-2, 02 226637122 </p>
                         <p className='fw-semibold mb-0'>admin@channeltwenty.com  <br /> infochanneltwenty@gmail.com</p>
 
-                        <div
-                            className="social-icons mx-auto"
-
-                        >
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-facebook" aria-hidden="true" />
-                            </a>
-                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-youtube" aria-hidden="true" />
-                            </a>
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-twitter" aria-hidden="true" />
-                            </a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-linkedin" aria-hidden="true" />
-                            </a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-instagram" aria-hidden="true" />
-                            </a>
-                        </div>
+                        <SocialIconsMenu />
 
                     </div>
 
