@@ -6,6 +6,7 @@ import UpdateNews from './NewsCard/UpdateNews';
 import MiddleCard from './NewsCard/MiddleCard';
 import CrimeInternational from './NewsCard/CrimeInternational';
 import ElectionNewsCard from './NewsCard/ElectionNewsCard';
+import EduSportsEconomy from './EduSportsEconomy';
 
 const NewsHome = () => {
     return (
@@ -17,6 +18,7 @@ const NewsHome = () => {
             <MiddleCard />
             <CrimeInternational />
             <ElectionNewsCard />
+            <EduSportsEconomy />
         </div>
     );
 };

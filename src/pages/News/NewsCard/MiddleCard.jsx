@@ -12,7 +12,7 @@ const MiddleCard = () => {
                 <RightSideAdd />
             </div>
             {/*   <div className='row w-100 mx-auto'>
-                <LeftSidebarCard />
+                <SidebarCard />
             </div> */}
         </div>
     );
