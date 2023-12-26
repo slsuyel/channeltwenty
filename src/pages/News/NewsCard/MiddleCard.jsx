@@ -11,9 +11,7 @@ const MiddleCard = () => {
                 <MiddleNewsBody />
                 <RightSideAdd />
             </div>
-            {/*   <div className='row w-100 mx-auto'>
-                <SidebarCard />
-            </div> */}
+
         </div>
     );
 };

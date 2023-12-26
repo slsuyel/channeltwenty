@@ -30,16 +30,16 @@ const newsItems = [
     },
 
 ];
-const SidebarCard = ({ tittle }) => {
+const RelatedNews = () => {
     return (
-        <div className='col-md-3'>
+        <div className=''>
             <div className="mb-1 mx-auto">
                 <h3
                     className="border-2 border-bottom border-danger"
                     style={{ paddingLeft: 0 }}
                 >
                     <span className="fs-5 primary-bg px-2 py-1 text-nowrap text-white">
-                        {tittle}
+                        জাতীয় থেকে আরও সংবাদ
                     </span>
                 </h3>
             </div>
@@ -75,4 +75,4 @@ const SidebarCard = ({ tittle }) => {
     );
 };
 
-export default SidebarCard;
+export default RelatedNews;
