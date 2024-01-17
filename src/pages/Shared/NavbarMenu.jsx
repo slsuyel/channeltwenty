@@ -1,6 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/Bg-logo.png';
 import './Shared.css';
 import { useState } from 'react';
 
@@ -26,7 +26,7 @@ const NavbarMenu = () => {
 
 
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="justify-content-evenly navbar-nav w-100 mt-2">
+                <Nav className="align-items-baseline justify-content-evenly my-2 navbar-nav w-100">
 
                     <Link>  <img src={logo} alt="Logo" className='my-2' style={{ width: '80px' }} /></Link>
 

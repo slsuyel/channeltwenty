@@ -31,8 +31,8 @@ const LiveVideo = () => {
                         className='mx-auto'
                         width="1000"
                         height="555"
-                        src="https://www.youtube.com/embed/dmGprO-4k5I?autoplay=1&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
+                        src="https://www.youtube.com/embed/SsRq8uQtLoU?autoplay=1&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        /* https://www.youtube.com/embed/SsRq8uQtLoU?si=1nWZOnj-O55PzRhA */
                         style={{
                             position: 'absolute',
                             top: '0',
