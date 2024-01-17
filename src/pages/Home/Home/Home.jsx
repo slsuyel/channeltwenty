@@ -1,3 +1,4 @@
+import MiddleAdd from "../../AddsItems/MiddleAdd";
 import LiveVideo from "./LiveVideo";
 import Trigger from "./Trigger";
 
@@ -6,6 +7,9 @@ const Home = () => {
         <div>
             <Trigger />
             <LiveVideo />
+            <div className="text-center">
+                <MiddleAdd />
+            </div>
         </div>
     );
 };

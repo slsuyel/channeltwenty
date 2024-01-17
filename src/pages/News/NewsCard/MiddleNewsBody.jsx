@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const MiddleNewsBody = () => {
     return (
         <div className='col-md-6'>
-            <MiddleAdd />
+            <MiddleAdd title={'  R. N. TRADING LIMITED'} />
 
             <div className="mb-1 mx-auto  w-100">
                 <h3

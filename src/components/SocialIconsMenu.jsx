@@ -2,21 +2,26 @@ import React from 'react';
 
 const SocialIconsMenu = () => {
     return (
-        <div className="mx-auto social-icons text-center w-100" >
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook" aria-hidden="true" />
+        <div className='d-flex fs-2 gap-3 justify-content-around my-1'>
+
+            <a className='text-dark-emphasis' target='_blank' href="https://www.facebook.com" rel="noreferrer">
+                <i className="fab fa-facebook-f" aria-hidden="true"></i>
             </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-youtube" aria-hidden="true" />
+            <a className='text-dark-emphasis' target='_blank' href="https://www.youtube.com" rel="noreferrer">
+                <i className="fab fa-youtube" aria-hidden="true"></i>
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter" aria-hidden="true" />
+            <a className='text-dark-emphasis' target='_blank' href="https://www.twitter.com" rel="noreferrer">
+                <i className="fab fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin" aria-hidden="true" />
+
+            <a className='text-dark-emphasis' target='_blank' href="https://www.linkedin.com" rel="noreferrer">
+                <i className="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram" aria-hidden="true" />
+            <a className='text-dark-emphasis' target='_blank' href="https://www.instagram.com" rel="noreferrer">
+                <i className="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a className='text-dark-emphasis' target='_blank' href="https://www.whatsapp.com" rel="noreferrer">
+                <i className="fab fa-whatsapp" aria-hidden="true"></i>
             </a>
         </div>
     );
