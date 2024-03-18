@@ -106,3 +106,27 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.bg-nil {
+  background: #33CCCC;
+}
+
+.form-control:focus,
+.form-select:focus {
+
+  box-shadow: 0 0 0 0.035rem rgba(13, 110, 253, .25) !important;
+}
+
+.nav-links {
+  border-radius: 7px !important;
+  padding: 6px 8px !important;
+  height: 39px !important;
+  background: red !important;
+  margin: 2px !important;
+  text-align: center !important;
+  width: 160px !important;
+}
+
+.active {
+  background-color: #014f03 !important;
+}

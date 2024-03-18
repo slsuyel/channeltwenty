@@ -1,4 +1,3 @@
-
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -14067,6 +14066,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .user-panel .status {
     font-size: .875rem
 }
+
+
 
 .nav-sidebar .nav-item>.nav-link {
     margin-bottom: .2rem

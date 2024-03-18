@@ -16,7 +16,7 @@ const Header = () => {
                     style={{
                         position: 'absolute',
                         left: '41px',
-                        top: '85px',
+                        top: '50px',
                     }}
                 >
                     <div className='d-flex fs-2 gap-3 justify-content-around my-1'>

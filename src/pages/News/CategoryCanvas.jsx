@@ -1,93 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useCategories from '../../hooks/useCategories';
+import { organizeCategories } from '../../utils/functions';
 
-const categories = [
-    {
-        label: 'প্রচ্ছদ',
-        name: 'cover',
-    },
-    {
-        label: 'নিউজ',
-        name: 'news',
-    },
-    {
-        label: 'জাতীয়',
-        name: 'national',
 
-    },
-    {
-        label: 'নির্বাচন সংবাদ',
-        name: 'election-news'
-    }
-    ,
-    {
-        label: 'বাংলাদেশ',
-        name: 'bangladesh',
-        subcategories: [
-            { label: 'আইন আদালত', name: 'court-of-law' },
-            { label: 'রাজনীতি', name: 'politics' },
-        ],
-    },
-    {
-        label: 'অর্থনীতি',
-        name: 'economy',
-        subcategories: [
-            { label: 'পুজিবাজার', name: 'capital-market' },
-            { label: 'বানিজ্য', name: 'business-news' },
-        ],
-    },
-    {
-        label: 'আন্তর্জাতিক সংবাদ',
-        name: 'international',
-        subcategories: [
-            { label: 'ওপার বাংলা', name: 'west-bengal' },
-        ],
-    },
-    {
-        label: 'খেলাধুলা',
-        name: 'sports',
-        subcategories: [
-            { label: 'ক্রিকেট', name: 'cricket' },
-            { label: 'ফুটবল', name: 'football' },
-        ],
-    },
-    {
-        label: 'অপরাধ',
-        name: 'crime',
-        subcategories: [
-            { label: 'আটক', name: 'arrested' },
-            { label: 'দুর্নীতি', name: 'corruption' },
-            { label: 'দুর্ভোগ', name: 'suffering' },
-            { label: 'ধর্ষণ', name: 'rape' },
-            { label: 'সংঘর্ষ', name: 'conflict' },
-        ],
-    },
-    {
-        label: 'অন্যান্য',
-        name: 'others',
-        subcategories: [
-            { label: 'কৃষি সংবাদ', name: 'agricultural-news' },
-            { label: 'মানবতা ও উদারতা', name: 'humanity-and-generosity' },
-            { label: 'আত্মহত্যা', name: 'suicide' },
-            { label: 'আবহাওয়া', name: 'weather' },
-            { label: 'দুর্ঘটনা', name: 'accident' },
-            { label: 'বিনোদন', name: 'entertainment' },
-            { label: 'শিক্ষা ও বিজ্ঞান', name: 'education-and-science' },
-            { label: 'স্বাস্থ্য সমাচার', name: 'health-news' },
-        ],
-    },
-    {
-        label: 'ভিডিও',
-        name: 'video',
-    },
-];
 
 const CategoryCanvas = () => {
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
-
     const toggleOffcanvas = () => {
         setIsOffcanvasOpen(!isOffcanvasOpen);
     };
+    const { categories, isLoading } = useCategories();
+
+    if (isLoading) {
+        return <p>Navbar Loading</p>;
+    }
+
+    const reArrCategories = organizeCategories(categories);
+
+
+
 
     return (
         <div className='bg-body-secondary d-block d-sm-none me-2 text-end'>
@@ -109,17 +41,18 @@ const CategoryCanvas = () => {
 
 
                     <ul className="list-unstyled">
-                        {categories.map((category) => (
+                        {reArrCategories.map((category) => (
                             <li className='border-bottom border-secondary fs-5 mb-2  text-white ' key={category.name}>
-                                {category.subcategories && category.subcategories.length ? (
+                                {category.children && category.children.length > 0 ? (
                                     <div>
                                         <span className="dropdown-toggle" data-toggle="dropdown">
                                             {category.label}
                                         </span>
                                         <ul className="dropdown-menu ps-2 bg-gradient" style={{ background: '#000028' }}>
-                                            {category.subcategories.map((subcategory) => (
+                                            {category.children.map((subcategory) => (
                                                 <li key={subcategory.name}>
-                                                    <Link className='border-bottom border-secondary fs-5 mb-2 text-center text-white text-decoration-none' to={`/${category.name}/${subcategory.name}`} onClick={toggleOffcanvas}>
+                                                    <Link className='border-bottom border-secondary fs-5 mb-2 text-center text-white text-decoration-none'
+                                                        to={`/category/${subcategory.slug}`} onClick={toggleOffcanvas}>
                                                         {subcategory.label}
                                                     </Link>
                                                 </li>
@@ -127,7 +60,7 @@ const CategoryCanvas = () => {
                                         </ul>
                                     </div>
                                 ) : (
-                                    <Link className=' fs-5 mb-2 text-center text-white text-decoration-none' to={`/${category.name}`} onClick={toggleOffcanvas}>
+                                    <Link className=' fs-5 mb-2 text-center text-white text-decoration-none' to={`/category/${category.slug}`} onClick={toggleOffcanvas}>
                                         {category.label}
                                     </Link>
                                 )}

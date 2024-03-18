@@ -5,8 +5,8 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="main-sidebar nav-pills sidebar-dark-primary sidebar-no-expand elevation-1" style={{ backgroundColor: '#3940A4' }}>
-        <Link to="/dashboard" className="brand-link text-decoration-none py-2">
+      <aside className="main-sidebar nav-pills sidebar-dark-primary sidebar-no-expand elevation-1" >
+        <Link to="/dashboard" className="brand-link text-decoration-none py-2 bg-black">
           <img
             src="https://w7.pngwing.com/pngs/502/794/png-transparent-white-arrow-going-up-computer-icons-dashboard-car-symbol-dashboard-icon-miscellaneous-angle-logo.png"
             alt="Dashboard Logo"
@@ -17,7 +17,7 @@ export default function Sidebar() {
 
 
 
-        <div className="sidebar">
+        <div className="sidebar" style={{ height: '100vh' }}>
           <nav className="mt-2">
             <ul
               className="nav nav-sidebar flex-column"
@@ -34,48 +34,37 @@ export default function Sidebar() {
               </li>
 
 
-              <li className="nav-item">
-                <Link to="/dashboard/student" className="nav-link">
-                  <i className="nav-icon fas fa-users"></i>
-                  <p className='text-white'>Student</p>
-                </Link>
-              </li>
 
-              <li className="nav-item">
-                <Link to="/dashboard/teachers" className="nav-link">
-                  <i className="nav-icon fa-solid fa-chalkboard-user"></i>
-                  <p className='text-white'>Teacher</p>
-                </Link>
-              </li>
 
 
               <li className="nav-item">
-                <Link to="/dashboard/programs" className="nav-link">
-                  <i className="nav-icon fa-solid fa-file-circle-question"></i>
-                  <p className='text-white'>Programs</p>
-                </Link>
-              </li>
-
-
-              <li className="nav-item">
-                <Link to="/dashboard/users " className="nav-link">
-                  <i className="nav-icon fa-solid fa-people-group"></i>
-                  <p className='text-white'>Users </p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link to="/dashboard/success " className="nav-link">
-                  <i className="nav-icon fa-solid fa-calendar-check"></i>
-                  <p className='text-white'>Success </p>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/dashboard/blog " className="nav-link">
+                <Link to="/dashboard/add/news" className="nav-link">
                   <i className="nav-icon fa-regular fa-newspaper"></i>
-                  <p className='text-white'>Blog </p>
+                  <p className='text-white'>Add News</p>
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link to="/dashboard/news" className="nav-link">
+                  <i className="nav-icon fa-solid fa-newspaper"></i>
+                  <p className='text-white'>News</p>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/dashboard/category" className="nav-link">
+                  <i className="nav-icon fa-solid fa-newspaper"></i>
+                  <p className='text-white'>Category</p>
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link to="/dashboard/setting" className="nav-link">
+                  <i className="nav-icon fa-solid fa-gear"></i>
+                  <p className='text-white'>Setting</p>
+                </Link>
+              </li>
+
+
               {/* <i class="fa-solid fa-calendar-check"></i>"></i> */}
               <div>
                 <hr className='bg-black m-0 my-2' />

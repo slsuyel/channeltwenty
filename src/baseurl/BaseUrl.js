@@ -1,1 +1,1 @@
-export const baseUrl = 'https://lms.tepriganjhighschool.edu.bd';
+export const baseUrl = 'https://api.channeltwenty.com';

@@ -12,6 +12,13 @@ import Login from "../components/Login";
 import ScrollToTop from "../components/ScrollToTop";
 import NewsHome from "../pages/News/NewsHome";
 import SingleNews from "../pages/News/NewsCard/SingleNews/SingleNews";
+import DashHome from "../pages/Dashboard/DashHome/DashHome";
+import AddBlog from "../pages/Dashboard/Blogs/AddBlog";
+import AllNews from "../pages/Dashboard/Blogs/AllNews";
+import Setting from "../pages/Dashboard/Setting/Setting";
+import UserCheck from "./UserCheck";
+import Category from "../pages/Dashboard/Category/Category";
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -51,7 +58,7 @@ export const router = createBrowserRouter([
                 element: <NewsHome />,
             },
             {
-                path: "/news/12",
+                path: "/news/:id",
                 element: <SingleNews />,
             },
 
@@ -60,11 +67,27 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <ScrollToTop><WithNavbar /></ScrollToTop>,
+        element: <UserCheck><WithNavbar /></UserCheck>,
         children: [
             {
                 path: '',
-                element: <div>Home  2</div>
+                element: <DashHome />
+            },
+            {
+                path: 'add/news',
+                element: <AddBlog />
+            },
+            {
+                path: 'news',
+                element: <AllNews />
+            },
+            {
+                path: 'category',
+                element: <Category />
+            },
+            {
+                path: 'setting',
+                element: <Setting />
             },
 
         ]
