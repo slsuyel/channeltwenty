@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import Slider from "react-slick";
+import useAllNews from '../../hooks/useAllNews';
+import SkeletonLoader from '../../components/Utilites/SkeletonLoader';
 
-const items = [];
-
-for (let i = 1; i <= 20; i++) {
-    items.push(i);
-}
 
 const UpdateNewsSlider = () => {
+
+    const { allNews, isLoading, } = useAllNews()
+
+    if (isLoading) {
+        return <SkeletonLoader />
+    }
+
     const settings = {
         // variableWidth: true,
         dots: false,
@@ -57,13 +61,13 @@ const UpdateNewsSlider = () => {
             </div>
             <div style={{ width: '99%', height: '100%' }} className="mx-auto container-fluid">
                 <Slider {...settings}>
-                    {items.map((item) => (
+                    {allNews.slice(5, 20).map((item) => (
                         <div key={item.index} className="position-relative">
                             {/* Use Link instead of a */}
                             <Link to="/news/12 ">
                                 <div className="img-contain rounded-0">
                                     <img
-                                        src="https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png"
+                                        src={item.banner}
                                         alt="Zoomable Image"
                                     />
                                     <div className="overlay border border-2 border-bottom-0 border-top-0" />

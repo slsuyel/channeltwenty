@@ -14,7 +14,6 @@ function ErrorPage() {
                 className="img-fluid img-thumbnail mx-auto w-25"
             />
             <h1>Oops!</h1>
-            <h1>সম্ভবত পেজটি এখনও তৈরি হয়নি। পরে চেষ্টা করুন</h1>
 
             <p>Sorry, an unexpected error has occurred.</p>
             <p>

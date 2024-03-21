@@ -66,7 +66,7 @@ const Footer = () => {
                     <Link className=' text-decoration-none text-white'>Contact</Link>
                 </div>
                 <div>
-                    developed by  <Link className=' text-decoration-none '>Softweb System Solution</Link>
+                    developed by  <Link target='_blank' to='http://www.codecursor.com' className=' text-decoration-none '>Code Cursor </Link>
                 </div>
 
             </div>

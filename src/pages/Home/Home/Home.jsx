@@ -1,11 +1,13 @@
 import MiddleAdd from "../../AddsItems/MiddleAdd";
+import NewsTrigger from "../../News/NewsTrigger";
 import LiveVideo from "./LiveVideo";
-import Trigger from "./Trigger";
+// import Trigger from "./Trigger";
 
 const Home = () => {
     return (
         <div>
-            <Trigger />
+            {/* <Trigger /> */}
+            <NewsTrigger />
             <LiveVideo />
             <div className="text-center">
                 <MiddleAdd />

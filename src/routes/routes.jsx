@@ -19,6 +19,8 @@ import Setting from "../pages/Dashboard/Setting/Setting";
 import UserCheck from "./UserCheck";
 import Category from "../pages/Dashboard/Category/Category";
 
+import NewsByCategory from "./../pages/News/newsByCategory";
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -60,6 +62,10 @@ export const router = createBrowserRouter([
             {
                 path: "/news/:id",
                 element: <SingleNews />,
+            },
+            {
+                path: "/category/:category",
+                element: <NewsByCategory />,
             },
 
 

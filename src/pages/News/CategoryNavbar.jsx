@@ -8,7 +8,7 @@ const CategoryNavbar = () => {
     const { categories, isLoading } = useCategories();
 
     if (isLoading) {
-        return <p>Navbar Loading</p>;
+        return null
     }
 
     const reArrCategories = organizeCategories(categories);

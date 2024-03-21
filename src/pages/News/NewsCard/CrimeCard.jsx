@@ -1,29 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-const newsItems = [
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
 
-];
-const CrimeCard = () => {
+const CrimeCard = ({ data }) => {
     return (
         <div className='col-md-6 row'>
 
@@ -40,55 +19,30 @@ const CrimeCard = () => {
 
             <div className='col-md-6'>
 
-                <div className=" position-relative">
-                    <Link to='/news/12' >
+                {
+                    data && data.slice(0, 2).map((news) => <div key={news.id} className=" position-relative">
+                        <Link to={`/news/${news.id}`} >
 
-                        <div className="img-contain">
-                            <img
-                                src="https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png"
-                                alt="Zoomable Image"
-                            />
-                            <div className="overlay" />
-                        </div>
-                    </Link>
-                    <div className="position-absolute title-text">
-
-                        <a
-                            className="text-decoration-none text-white "
-                            href="/posts/64ecf1ddc4cc5ecd11e30627"
-                        >
-
-                            <h5 className="">
-                                কনটেইনার টার্মিনাল নির্মাণে মার্সকের প্রস্তাব বিবেচনা করবে সরকার
-                            </h5>
-                        </a>
-                    </div>
-                </div>
-                <div className=" position-relative">
-                    <Link to='/news/12' >
-
-                        <div className="img-contain">
-                            <img
-                                src="https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png"
-                                alt="Zoomable Image"
-                            />
-                            <div className="overlay" />
-                        </div>
-                    </Link>
-                    <div className="position-absolute title-text">
-
-                        <Link to='/news/12' className="text-decoration-none text-white " >
-
-                            <h5 className="">
-                                কনটেইনার টার্মিনাল নির্মাণে মার্সকের প্রস্তাব বিবেচনা করবে সরকার
-                            </h5>
+                            <div className="img-contain">
+                                <img src={news.banner}
+                                    alt="Zoomable Image"
+                                />
+                                <div className="overlay" />
+                            </div>
                         </Link>
-                    </div>
-                </div>
+                        <div className="position-absolute title-text">
+                            <h5 className="">
+                                {news.title}
+                            </h5>
+
+                        </div>
+                    </div>)
+                }
+
 
             </div>
             <div className='col-md-6 row'>
-                {newsItems.map((newsItem, index) => (
+                {data.slice(2, 6).map((news, index) => (
                     <div
                         key={index}
                         className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
@@ -96,21 +50,20 @@ const CrimeCard = () => {
                     >
                         <div>
                             <img
-                                src={newsItem.imageSrc}
+                                src={news.banner}
                                 alt=""
                                 className="img-fluid mb-1"
                                 width="180px"
                             />
                         </div>
                         <div>
-                            <Link to='/news/12'
+                            <Link to={`/news/${news.id}`}
                                 className="text-decoration-none text-dark">
                                 <h6 className="fw-normal">
-                                    {newsItem.title}
+                                    {news.title}
                                 </h6>
                                 <p style={{ color: '#0004f4' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
-                                    ডিসেম্বর ২৪, ২০২৩</p>
-
+                                    {news.date}</p>
                             </Link>
                         </div>
                     </div>

@@ -33,8 +33,8 @@ const AllNews = () => {
                 const res = await callApi('DELETE', `/api/articles/${id}`);
                 console.log(res);
                 refetch()
-                // Swal.fire('Deleted!', 'The news article has been deleted.', 'success');
-                Swal.fire('Error!', '405 Method Not Allowed', 'error');
+                Swal.fire('Deleted!', 'The news article has been deleted.', 'success');
+                // Swal.fire('Error!', '405 Method Not Allowed', 'error');
             } catch (error) {
                 Swal.fire('Error!', 'Failed to delete the news article.', 'error');
             }
