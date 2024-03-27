@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import Slider from "react-slick";
-import useAllNews from '../../hooks/useAllNews';
+// import useAllNews from '../../hooks/useAllNews';
 import SkeletonLoader from '../../components/Utilites/SkeletonLoader';
+import useLatest from '../../hooks/useLatest';
 
 
 const UpdateNewsSlider = () => {
 
-    const { allNews, isLoading, } = useAllNews()
+    const { latestNews, isLoading, } = useLatest()
+
+
 
     if (isLoading) {
         return <SkeletonLoader />
@@ -61,12 +64,13 @@ const UpdateNewsSlider = () => {
             </div>
             <div style={{ width: '99%', height: '100%' }} className="mx-auto container-fluid">
                 <Slider {...settings}>
-                    {allNews.slice(5, 20).map((item) => (
+                    {latestNews.map((item) => (
                         <div key={item.index} className="position-relative">
-                            {/* Use Link instead of a */}
-                            <Link to="/news/12 ">
+
+                            <Link to={`/news/${item.id}`}>
                                 <div className="img-contain rounded-0">
                                     <img
+                                        className='latest-news-img'
                                         src={item.banner}
                                         alt="Zoomable Image"
                                     />
@@ -74,16 +78,16 @@ const UpdateNewsSlider = () => {
                                 </div>
                             </Link>
                             <div className="position-absolute title-text">
-                                <span className="p-1 primary-bg px-2 py-0 text-nowrap text-sm text-white">
+                                {/* <span className="p-1 primary-bg px-2 py-0 text-nowrap text-sm text-white">
                                     জাতীয়
-                                </span>
+                                </span> */}
                                 {/* Use Link instead of a */}
-                                <Link to="/news/12 "
+                                <Link to={`/news/${item.id}`}
                                     className="text-decoration-none text-white"
 
                                 >
                                     <h5 className="">
-                                        কনটেইনার টার্মিনাল নির্মাণে মার্সকের প্রস্তাব বিবেচনা করবে সরকার
+                                        {item.title}
                                     </h5>
                                     {/*  <p className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
                                         ডিসেম্বর ২৪, ২০২৩</p> */}

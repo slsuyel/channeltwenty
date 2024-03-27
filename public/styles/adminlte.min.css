@@ -48438,19 +48438,8 @@ blockquote.quote-gray-dark h6 {
     color: #fff
 }
 
-.bg-white {
-    background-color: #fff !important
-}
 
-.bg-white,
-.bg-white>a {
-    color: #1f2d3d !important
-}
 
-.bg-white.btn:hover {
-    border-color: #e6e6e6;
-    color: #121a24
-}
 
 .bg-white.btn.active,
 .bg-white.btn:active,
@@ -49258,12 +49247,7 @@ blockquote.quote-gray-dark h6 {
         background-color: #fff !important
     }
 
-    .table td.bg-white,
-    .table td.bg-white>a,
-    .table th.bg-white,
-    .table th.bg-white>a {
-        color: #1f2d3d !important
-    }
+
 
     .table td.bg-white.btn:hover,
     .table th.bg-white.btn:hover {
@@ -52855,10 +52839,7 @@ a.text-muted:hover {
     background-color: #fff !important
 }
 
-.dark-mode.bg-white,
-.dark-mode.bg-white>a {
-    color: #1f2d3d !important
-}
+
 
 .dark-mode.bg-white.btn:hover {
     border-color: #e6e6e6;

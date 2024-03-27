@@ -1,4 +1,5 @@
 import React from 'react';
+import DynamicDate from '../../components/DynamicDate';
 
 const LeftSideAdds = () => {
     return (
@@ -14,8 +15,12 @@ const LeftSideAdds = () => {
                 </h3>
             </div>
 
-            <div>
-                <img src="https://www.channeltwenty.com/wp-content/uploads/2022/09/WhatsApp-Image-2022-03-07-at-4.03.52-PM.jpeg" alt="" className='img-fluid' />
+            <div className='m-auto'>
+
+                <DynamicDate />
+
+
+                <div className='text-center'>  <img src="https://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif" alt="" className='img-fluid' /></div>
             </div>
         </div>
     );

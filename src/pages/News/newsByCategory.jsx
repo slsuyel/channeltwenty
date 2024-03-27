@@ -30,7 +30,7 @@ const NewsByCategory = () => {
 
     console.log(data);
     return (
-        <div className="row mx-auto">
+        <div className="row mx-auto my-3">
             <div className='col-md-3'>
 
                 {data.slice(0, 8).map((newsItem, index) => (

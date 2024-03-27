@@ -15,8 +15,8 @@ const RightSideAdd = () => {
             </div>
 
             <SocialIconsMenu />
-            <div>
-                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_350/https://www.channeltwenty.com/wp-content/uploads/2022/09/RN-Tours.png" alt="" className='img-fluid' />
+            <div className='text-center'>
+                <img src="https://www.business2community.com/wp-content/uploads/2016/07/LOFTdesserts.gif.gif" alt="" className='img-fluid' />
             </div>
 
         </div>

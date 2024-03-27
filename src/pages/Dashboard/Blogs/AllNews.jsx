@@ -47,9 +47,8 @@ const AllNews = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <h1>All News</h1>
-            <Table striped bordered hover>
+        <div className="container mt-5" style={{ maxHeight: '500px', overflowY: 'auto' }}>
+            <Table striped bordered hover responsive className="">
                 <thead>
                     <tr>
                         <th>Banner</th>

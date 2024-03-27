@@ -31,7 +31,7 @@ const CrimeCard = ({ data }) => {
                             </div>
                         </Link>
                         <div className="position-absolute title-text">
-                            <h5 className="">
+                            <h5 className="text-white">
                                 {news.title}
                             </h5>
 

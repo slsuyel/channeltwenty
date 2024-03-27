@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className='col-md-2 my-auto text-center'>
                     <img src={footerImg} alt="footerImg" width={100} />
                 </div>
-                <div className='col-md-3 my-auto px-2 text-end'>
+                <div className='col-md-3 my-auto px-2 '>
                     <h5>প্রধান উপদেষ্টাঃ মোঃ নাদিম</h5>
                     <h5>
                         সম্পাদক ও প্রকাশক: সোহেল শিকদার জুম্মান
@@ -29,7 +29,7 @@ const Footer = () => {
 
                 <div className="col-md-4 my-auto">
 
-                    <p className="fs-5 m-0 px-2 text-end">  প্রকাশিত সংবাদ, কলাম, তথ্য, ছবি ইত্যাদি যথাযথ কর্তৃপক্ষের অনুমতি ছাড়া ব্যবহার করা কপিরাইট আইনে দণ্ডনীয় অপরাধ। অনুমোদন ছাড়া এর ব্যবহার পরিলক্ষিত হলে কর্তৃপক্ষ যথাযথ আইনী ব্যবস্থা গ্রহণ করবে।</p>
+                    <p className="fs-5 m-0 px-2 ">  প্রকাশিত সংবাদ, কলাম, তথ্য, ছবি ইত্যাদি যথাযথ কর্তৃপক্ষের অনুমতি ছাড়া ব্যবহার করা কপিরাইট আইনে দণ্ডনীয় অপরাধ। অনুমোদন ছাড়া এর ব্যবহার পরিলক্ষিত হলে কর্তৃপক্ষ যথাযথ আইনী ব্যবস্থা গ্রহণ করবে।</p>
 
                 </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
 
             <div className="align-items-center d-flex flex-wrap text-white justify-content-between px-2 py-1" style={{ backgroundColor: '#EC1E24' }}>
                 <div className='align-items-baseline d-flex flex-wrap text-center'>
-                    <h6 className='text-white mb-0'>কপিরাইট {convertToBanglaYear(new Date().getFullYear())} সকল স্বত্ব www.channeltwenty.com সংরক্ষিত </h6>
+                    <h6 className='text-white mb-0'>কপিরাইট © {convertToBanglaYear(new Date().getFullYear())} সকল স্বত্ব www.channeltwenty.com সংরক্ষিত </h6>
 
                     <Link className='border border-2 border-bottom-0 border-top-0 border-white mx-2 px-2 text-decoration-none text-white'>Privacy policy</Link>
                     <Link className=' text-decoration-none text-white'>Contact</Link>

@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
                 element: <SingleNews />,
             },
             {
-                path: "/category/:category",
+                path: "/news/category/:category",
                 element: <NewsByCategory />,
             },
 

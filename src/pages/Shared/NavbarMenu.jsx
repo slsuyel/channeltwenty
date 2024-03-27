@@ -1,4 +1,4 @@
-import { Navbar, Nav } from 'react-bootstrap';
+
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/images/Bg-logo.png';
 import './Shared.css';
@@ -6,40 +6,46 @@ import { useState } from 'react';
 
 const NavbarMenu = () => {
 
-    const [navbarExpanded, setNavbarExpanded] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const closeNavbar = () => {
-        setNavbarExpanded(false);
+    const handleDropdownToggle = () => {
+        setIsDropdownOpen(prevState => !prevState);
     };
 
 
-    /* <button type="button" className="btn btn-primary rounded-0 text-end" onClick={toggleOffcanvas}>
-                    <span className="text-white"><i className="fa-solid fa-bars"></i></span>
-                </button> */
-
     return (
-        <Navbar collapseOnSelect expand="lg" className='bg-white fw-bold navbar navbar-expand-lg navbar-light px-3 align-items-center' variant="light" expanded={navbarExpanded}>
+        <div className='sticky-top bg-white'>
+            <div className='d-flex justify-content-around py-2  text-white align-items-center'>
+                <Link to="/" className="navbar-brand d-none d-md-block">
+                    <img src={logo} alt="Logo" style={{ width: '80px' }} />
+                </Link>
+                <NavLink to="/" className="nav-link  nav-links">Home</NavLink>
+                <NavLink to="/video" className="nav-link  nav-links">Video</NavLink>
+                <NavLink to="/program" className="nav-link  nav-links">Program</NavLink>
+                <NavLink to="/news" className="nav-link  nav-links">News</NavLink>
+                <NavLink to="/archive" className="nav-link  nav-links">Archive</NavLink>
+                <NavLink to="/login" className="nav-link  nav-links">Login</NavLink>
 
-            <Navbar.Toggle aria-controls="responsive-navbar-nav " onClick={() => setNavbarExpanded(!navbarExpanded)} className='border-0 collapsed navbar-toggler p-1 rounded-0 text-bg-primary' />
+                <div className={`dropdown nav-links ${isDropdownOpen ? 'show' : ''}`}>
+                    <button
 
+                        className="border-0 dropdown-toggle  bg-transparent text-white"
+                        id="dropdown-search"
+                        onClick={handleDropdownToggle}
+                    >
+                        <i className="fas fa-search"></i>
+                    </button>
+                    <div className={`dropdown-menu p-0 rounded-3 rounded-end-5 search-btn  ${isDropdownOpen ? 'show' : ''}`}>
+                        <form className="d-flex">
+                            <input type="search" placeholder="খুঁজুন" aria-label="Search" className="form-control border-0 bg-2nd " />
 
+                            <button type="submit" className="bg-red border-0 rounded-end-4 px-2"><i className="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
 
-
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="align-items-baseline justify-content-evenly my-2 navbar-nav w-100">
-
-                    <Link>  <img src={logo} alt="Logo" className='my-2' style={{ width: '80px' }} /></Link>
-
-                    <NavLink onClick={closeNavbar} to="/" className="nav-link text-white nav-links">Home</NavLink>
-                    <NavLink onClick={closeNavbar} to="/video" className="nav-link text-white nav-links">Video</NavLink>
-                    <NavLink onClick={closeNavbar} to="/program" className="nav-link text-white nav-links">Program</NavLink>
-                    <NavLink onClick={closeNavbar} to="/news" className="nav-link text-white nav-links">News</NavLink>
-                    <NavLink onClick={closeNavbar} to="/archive" className="nav-link text-white nav-links">Archive</NavLink>
-                    <NavLink onClick={closeNavbar} to="/login" className="nav-link text-white nav-links">Login</NavLink>
-
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+            </div>
+        </div>
     );
 };
 

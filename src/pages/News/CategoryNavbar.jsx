@@ -14,7 +14,7 @@ const CategoryNavbar = () => {
     const reArrCategories = organizeCategories(categories);
 
     return (
-        <nav className="d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4" style={{ background: '#000028' }}>
+        <nav className="d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4 " style={{ background: '#000028' }}>
             <ul className="justify-content-evenly navbar-nav w-100">
                 {reArrCategories.map((category) => (
                     <li className="nav-item" key={category.slug}>
@@ -28,7 +28,7 @@ const CategoryNavbar = () => {
                                     {category.children.map((subcategory) => (
                                         <Dropdown.Item key={subcategory.slug}>
                                             <Link className="dropdown-item "
-                                                to={`/category/${subcategory.slug}`}>
+                                                to={`/news/category/${subcategory.slug}`}>
                                                 {/* to={`/category/${category.slug}/${subcategory.slug}`}> */}
                                                 {subcategory.label}
                                             </Link>
@@ -37,7 +37,7 @@ const CategoryNavbar = () => {
                                 </Dropdown.Menu>
                             </Dropdown>
                         ) : (
-                            <Link className="nav-link text-white" to={`/category/${category.slug}`}>
+                            <Link className="nav-link text-white" to={`/news/category/${category.slug}`}>
                                 {category.label}
                             </Link>
                         )}

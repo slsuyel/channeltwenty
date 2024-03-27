@@ -28,6 +28,8 @@ const SingleNews = () => {
         fetchArticle();
     }, [id]);
 
+
+
     return (
         <>
             {loading ? (
@@ -83,11 +85,13 @@ const SingleNews = () => {
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-4 col-xl-4">
-                            <SideBarAdd img={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9WKH0sDJasNwi0Ce_n39pFrLsmtuTWHjS3F9qCGqbB2XnAdVfATPkl37chgeDc4fKyQ&usqp=CAU'} />
+                            {/* <SideBarAdd img={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9WKH0sDJasNwi0Ce_n39pFrLsmtuTWHjS3F9qCGqbB2XnAdVfATPkl37chgeDc4fKyQ&usqp=CAU'} /> */}
+
                             <NewsTab />
                             <SideBarAdd img={"http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif"} />
-                            <RelatedNews />
-                            <SideBarAdd img={'https://rb.gy/g7tc9g'} />
+                            <RelatedNews slug={news.slug ? news.slug : 'obilmbe-gajay-zuddhbirtir-ahwan-janiye-niraptta-prishde-prstab-pas'} />
+
+                            {/* <SideBarAdd img={'https://rb.gy/g7tc9g'} /> */}
                         </div>
                     </div>
                     <EduSportsEconomy />

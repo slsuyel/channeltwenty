@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import React from 'react';
-import useAllNews from './../../hooks/useAllNews';
+
 import { Link } from 'react-router-dom';
+import useLatest from '../../hooks/useLatest';
 
 const NewsTrigger = () => {
-    const { allNews, isLoading } = useAllNews();
+    const { latestNews, isLoading, } = useLatest()
 
     if (isLoading) {
         return null;
@@ -15,11 +16,15 @@ const NewsTrigger = () => {
             <div className="fs-5 py-1 row text-dark">
                 <div className="col-md-12">
                     <div className="align-items-center d-flex justify-content-between">
-                        <div className="me-3 d-flex flex-fill flex-grow-1 flex-row justify-content-center nav-item-color primary-bg text-nowrap">
-                            <span className="px-3 text-white">&nbsp;সর্বশেষ সংবাদ</span>
+                        <div
+                            className="d-flex flex-row flex-grow-1 flex-fill justify-content-center   text-white px-1 news"
+                        >
+                            <span className="d-flex text-nowrap align-items-center" style={{ backgroundColor: "#FF0000" }}>&nbsp; সর্বশেষ সংবাদ
+                                : </span>
+                            <div className='arrow'></div>
                         </div>
                         <marquee behavior="scroll" direction="left">
-                            {allNews.map((news) => (
+                            {latestNews.map((news) => (
                                 <React.Fragment key={news.id}>
                                     <Link to={`/news/${news.id}`} className="text-dark mb-2 p-3 text-decoration-none">{news.title}</Link>
                                     <span className="red-dot"></span>

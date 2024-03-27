@@ -22,23 +22,24 @@ const LiveVideo = () => {
                         display: videoLoaded ? 'block' : 'none',
                         position: 'relative',
                         overflow: 'hidden',
-                        paddingTop: '56.25%',
+                        paddingTop: '50.25%',
                         width: '90%'
                     }}
                 >
                     <iframe
                         onLoad={handleVideoLoad}
                         className='mx-auto'
-                        width="1000"
-                        height="555"
-                        src="https://www.youtube.com/embed/SsRq8uQtLoU?autoplay=1&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        /* https://www.youtube.com/embed/SsRq8uQtLoU?si=1nWZOnj-O55PzRhA */
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/moQtMet7F7w?si=xGROhaNReRUKmwPJ?autoplay=1&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
                         style={{
                             position: 'absolute',
-                            top: '0',
-                            left: '0',
-                            width: '100%',
-                            height: '100%'
+                            top: '40%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '80%',
+                            height: '80%'
                         }}
 
                         allowfullscreen></iframe>

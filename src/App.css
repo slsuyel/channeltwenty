@@ -3,9 +3,33 @@
 @import url('https://fonts.maateen.me/bangla/font.css');
 
 body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Bangla', Arial, sans-serif !important;
-
 }
+
+.parent-bg {
+  position: relative;
+}
+
+.parent-bg::after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  background-image: url('./assets/images/bg-logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+
+
 
 .custom-bg {
   background-image: linear-gradient(270deg,
@@ -94,7 +118,7 @@ body {
 
 .title-text {
   bottom: 3px;
-  left: 25px;
+  left: 17px;
 }
 
 .newscard {
@@ -124,9 +148,62 @@ body {
   background: red !important;
   margin: 2px !important;
   text-align: center !important;
-  width: 160px !important;
+  width: 140px !important;
 }
 
 .active {
   background-color: #014f03 !important;
+}
+
+button.slick-arrow {
+  background: #000000;
+}
+
+button.slick-arrow:hover {
+  background: #262626;
+}
+
+button.slick-arrow:focus {
+  background: #000000;
+}
+
+.hover {
+  transition: color 0.3s ease;
+}
+
+.hover:hover {
+  opacity: 0.7 !important;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8 !important;
+}
+
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 18px solid #FF0000;
+}
+
+.search-btn {
+  width: 304px;
+  margin-left: -300px !important;
+  margin-top: 15px;
+}
+
+.latest-news-img {
+  height: 200px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .latest-news-img {
+    height: 300px !important;
+  }
 }

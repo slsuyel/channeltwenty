@@ -4,22 +4,22 @@ const FooterMenu = () => {
     return (
         <div className="mt-3 py-3" style={{ background: '#666666' }}>
             <div className="d-flex flex-wrap gap-2 justify-content-center mb-2">
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/home">Home</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/video">Video</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/program">Program</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/news">News</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/archive">Archive</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login">Login</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/home">Home</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/video">Video</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/program">Program</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/news">News</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/archive">Archive</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login">Login</Link>
             </div>
 
             <div className="d-flex flex-wrap gap-2 justify-content-center">
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login"> জাতীয়</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login"> বাংলাদেশ</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login">অর্থনীতি</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login">আন্তর্জাতিক</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login"> খেলাধূলা</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login"> অপরাধ</Link>
-                <Link className="text-decoration-none text-white fs-5 mx-3" to="/login">ভিডিও</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login"> জাতীয়</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login"> বাংলাদেশ</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login">অর্থনীতি</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login">আন্তর্জাতিক</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login"> খেলাধূলা</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login"> অপরাধ</Link>
+                <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/login">ভিডিও</Link>
             </div>
 
         </div>
