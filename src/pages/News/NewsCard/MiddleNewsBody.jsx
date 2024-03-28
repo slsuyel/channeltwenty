@@ -30,7 +30,7 @@ const MiddleNewsBody = () => {
 
             <div className='row mx-auto w-100'>
                 <div className="col-md-6 p-0">
-                    <Link to={`/news/${data[0].id}`} className='text-decoration-none '>
+                    <Link to={`/news/${data[0].slug}`} className='text-decoration-none '>
                         <div className="img-contain rounded-1">
                             <img
                                 src={data[0].banner}
@@ -60,7 +60,7 @@ const MiddleNewsBody = () => {
                     {
                         data.slice(1, 5).map((news) =>
                             <div key={news.id} className='col-md-6'>
-                                <Link to={`/news/${news.id}`} className='text-decoration-none '>
+                                <Link to={`/news/${news.slug}`} className='text-decoration-none '>
                                     <img src={news.banner} alt="" className='img-fluid' />
                                     <h6 className='fw-bold mb-0 mt-1 text-dark'>
                                         {news.title}

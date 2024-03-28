@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useNewsByCategory from '../../../hooks/useNewsByCategory';
+import SkeletonLoader from '../../../components/Utilites/SkeletonLoader';
 
 const SportsNews = () => {
+
+    const { data, loader } = useNewsByCategory('sports');
+
+    if (loader) {
+        return <SkeletonLoader />
+    }
+
+
+
     return (
         <div className='col-md-6 row'>
             <div className="mb-1 mx-auto ">
@@ -15,48 +26,19 @@ const SportsNews = () => {
                 </h3>
             </div>
 
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
-            <div className='col-md-4'>
-                <div>
-                    <img src="https://www.channeltwenty.com/wp-content/uploads/2023/11/CH-NEWS-15-11-23-11-480x320.jpg" alt="" className='img-fluid' />
-                    <Link to="/news/12 " className='text-decoration-none text-dark'> <h5>ফাইনালে ওঠার লড়াই : কিউইদের বিপক্ষে টসে জিতে ব্যাটিংয়ে ভারত</h5></Link>
-                    <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
-                </div>
-            </div>
+
+            {
+                data.slice(0, 6).map((news) => <div key={data.id} className='col-md-4'>
+                    <div>
+                        <img src={news.banner} alt="" className='img-fluid' />
+                        <Link to={`/news/${news.slug}`} className='text-decoration-none text-dark mb-1'> <h5>{news.title}</h5></Link>
+                        <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> {news.date}</p>
+                    </div>
+                </div>)
+            }
+
+
+
 
         </div>
     );

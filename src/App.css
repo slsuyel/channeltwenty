@@ -1,5 +1,3 @@
-/* global.css */
-
 @import url('https://fonts.maateen.me/bangla/font.css');
 
 body {
@@ -20,7 +18,7 @@ body {
   left: 0;
   width: 90%;
   height: 90%;
-  background-image: url('./assets/images/bg-logo.png');
+  background-image: url('./assets/images/logo.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -44,6 +42,11 @@ body {
 .primary-bg {
   background: #fe0000;
 }
+
+.img-fluid {
+  border-radius: 5px;
+}
+
 
 .social-icons {
   margin-top: 10px;
@@ -155,34 +158,30 @@ body {
   background-color: #014f03 !important;
 }
 
-button.slick-arrow {
-  background: #000000;
+.slick-next:before,
+.slick-prev:before {
+  color: black;
 }
 
-button.slick-arrow:hover {
-  background: #262626;
-}
 
-button.slick-arrow:focus {
-  background: #000000;
-}
 
 .hover {
   transition: color 0.3s ease;
 }
 
 .hover:hover {
-  opacity: 0.7 !important;
+  color: red;
 }
 
-a {
-  transition: color 0.3s ease;
+
+
+img {
+  transition: transform 0.3s ease-in-out;
 }
 
-a:hover {
-  opacity: 0.8 !important;
+img:hover {
+  transform: scale(1.03);
 }
-
 
 .arrow {
   width: 0;
@@ -193,9 +192,9 @@ a:hover {
 }
 
 .search-btn {
-  width: 304px;
-  margin-left: -300px !important;
-  margin-top: 15px;
+  width: 404px;
+  margin-left: -380px !important;
+  margin-top: 16px;
 }
 
 .latest-news-img {
@@ -205,5 +204,22 @@ a:hover {
 @media only screen and (max-width: 767px) {
   .latest-news-img {
     height: 300px !important;
+  }
+
+  .search-btn {
+    width: 304px;
+    margin-left: -300px !important;
+    margin-top: 15px;
+  }
+
+
+  .nav-links {
+    border-radius: 5px !important;
+    padding: 3px 6px !important;
+    background: red !important;
+    margin: 2px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    height: 28px !important;
   }
 }

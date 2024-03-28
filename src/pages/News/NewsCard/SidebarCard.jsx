@@ -1,36 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-const newsItems = [
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
 
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'যুক্তরাষ্ট্রের কাছ থেকে ইসরায়েলের মতো নিরাপ',
-    },
+const SidebarCard = ({ tittle, data }) => {
 
-];
-const SidebarCard = ({ tittle }) => {
     return (
         <div className='col-md-3'>
             <div className="mb-1 mx-auto">
@@ -43,7 +16,7 @@ const SidebarCard = ({ tittle }) => {
                     </span>
                 </h3>
             </div>
-            {newsItems.map((newsItem, index) => (
+            {data?.slice(0, 5).map((newsItem, index) => (
                 <div
                     key={index}
                     className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
@@ -51,9 +24,9 @@ const SidebarCard = ({ tittle }) => {
                 >
                     <div>
                         <img
-                            src={newsItem.imageSrc}
+                            src={newsItem.banner}
                             alt=""
-                            className="img-fluid mb-1"
+                            className="img-fluid mb-1 rounded-1"
                             width="180px"
                         />
                     </div>
@@ -61,12 +34,12 @@ const SidebarCard = ({ tittle }) => {
                         {/* Replace <a> with <Link> */}
                         <Link
                             className="text-decoration-none text-dark"
-                            to={'/news/12'}
+                            to={`/news/${newsItem.slug}`}
                         >
                             <h6 className="fw-bold">
                                 {newsItem.title}
                             </h6>
-                            <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> ডিসেম্বর ২৪, ২০২৩</p>
+                            <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> {newsItem.date}</p>
                         </Link>
                     </div>
                 </div>

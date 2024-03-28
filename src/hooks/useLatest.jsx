@@ -1,19 +1,29 @@
-import { useQuery } from 'react-query';
+import { useEffect, useState } from 'react';
 import { callApi } from '../utils/functions';
 
 const useLatest = () => {
-    const { data: latestNews, isLoading, isError, refetch } = useQuery('', fetchlatestNews);
+    const [latestNews, setLatestNews] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
-    async function fetchlatestNews() {
-        try {
-            const response = await callApi("GET", `/api/all/latest/articles`);
-            return response;
-        } catch (error) {
-            throw new Error('Error fetching news data');
-        }
-    }
+    useEffect(() => {
+        const fetchLatestNews = async () => {
+            setIsLoading(true);
+            try {
+                const response = await callApi("GET", `/api/all/latest/articles`);
+                // console.log(response);
+                setLatestNews(response.data);
+            } catch (error) {
+                setIsError(true);
+            }
+            setIsLoading(false);
+        };
 
-    return { latestNews, isLoading, isError, refetch };
+        fetchLatestNews();
+
+    }, []);
+
+    return { latestNews, isLoading, isError };
 };
 
 export default useLatest;

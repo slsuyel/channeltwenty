@@ -6,7 +6,6 @@ import NavbarMenu from '../pages/Shared/NavbarMenu'
 import FooterMenu from '../pages/Home/FooterMenu/FooterMenu'
 import CategoryNavbar from '../pages/News/CategoryNavbar'
 import CategoryCanvas from '../pages/News/CategoryCanvas'
-// import ScrollToTop from 'react-scroll-to-top'
 
 
 export default function WithOutnavbar() {
@@ -25,7 +24,6 @@ export default function WithOutnavbar() {
       </div>
       <FooterMenu />
       <Footer />
-      {/* <ScrollToTop smooth /> */}
 
     </>
   )

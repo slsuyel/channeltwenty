@@ -1,7 +1,11 @@
+/* eslint-disable react/prop-types */
 
-const SocialShare = () => {
-    const shareText = 'shareText'
-    const shareUrl = 'shareUrl'
+import { toast } from "react-toastify";
+
+const SocialShare = ({ title, slug }) => {
+
+    const shareText = title
+    const shareUrl = `https://shared.channeltwenty.com/news/${slug}`
     const shareOnFacebook = () => {
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
         window.open(facebookUrl, '_blank');
@@ -17,17 +21,56 @@ const SocialShare = () => {
         window.open(linkedinUrl, '_blank');
     };
 
+    // const shareOnWhatsApp = () => {
+    //     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`;
+    //     window.open(whatsappUrl, '_blank');
+    // };
     const shareOnWhatsApp = () => {
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareUrl)}`;
         window.open(whatsappUrl, '_blank');
     };
 
-    const printPage = () => {
-        window.print();
+
+    // const printPage = () => {
+    //     window.print();
+    // };
+
+    const copyUrl = () => {
+        navigator.clipboard.writeText(shareUrl)
+            .then(() => {
+                toast.success('URL copied to clipboard', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+            })
+            .catch(err => console.error('Error copying URL to clipboard: ', err));
     };
+
+
+
 
     return (
         <div className="d-flex flex-wrap gap-1">
+
+            <button
+                aria-label="facebook"
+                className="react-share__ShareButton Demo__some-network__share-button"
+                style={{
+                    backgroundColor: "transparent",
+                    border: "none",
+                    padding: 0,
+                    font: "inherit",
+                    color: "inherit",
+                    cursor: "pointer"
+                }}
+                onClick={copyUrl}
+            >
+                <img width={32} height={32} draggable={false} src="https://static.thenounproject.com/png/194434-200.png" alt="" />
+
+
+
+            </button>
+
+
             <button
                 aria-label="facebook"
                 className="react-share__ShareButton Demo__some-network__share-button"
@@ -49,6 +92,9 @@ const SocialShare = () => {
                     />
                 </svg>
             </button>
+
+
+
             <button
                 aria-label="twitter"
                 className="react-share__ShareButton Demo__some-network__share-button"
@@ -63,9 +109,9 @@ const SocialShare = () => {
                 onClick={shareOnTwitter}
             >
                 <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#2196F3" />
+                    <circle cx={32} cy={32} r={31} fill="#00aced" />
                     <path
-                        d="M 53.066406 21.871094 C 52.667969 21.339844 51.941406 21.179688 51.359375 21.496094 L 37.492188 29.058594 L 28.867188 21.660156 C 28.339844 21.207031 27.550781 21.238281 27.054688 21.730469 L 11.058594 37.726562 C 10.539062 38.25 10.542969 39.09375 11.0625 39.613281 C 11.480469 40.027344 12.121094 40.121094 12.640625 39.839844 L 26.503906 32.28125 L 35.136719 39.679688 C 35.667969 40.132812 36.457031 40.101562 36.949219 39.609375 L 52.949219 23.613281 C 53.414062 23.140625 53.464844 22.398438 53.066406 21.871094 Z M 53.066406 21.871094"
+                        d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
                         fill="white"
                     />
                 </svg>
@@ -83,13 +129,13 @@ const SocialShare = () => {
                 }}
                 onClick={shareOnLinkedIn}
             >
-                <svg viewBox="0 0 64 64" width={32} height={32}>
-                    <circle cx={32} cy={32} r={31} fill="#00aced" />
-                    <path
-                        d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
-                        fill="white"
-                    />
-                </svg>
+                <img width={30} height={30} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="" draggable={false} />
+
+
+
+
+
+
             </button>
             <button
                 aria-label="whatsapp"
@@ -112,7 +158,7 @@ const SocialShare = () => {
                     />
                 </svg>
             </button>
-            <button onClick={printPage} className="bg-warning border-0 px-2 py-1 rounded-circle text-dark">
+            {/* <button onClick={printPage} className="bg-warning border-0 px-2 py-1 rounded-circle text-dark">
                 <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -124,7 +170,7 @@ const SocialShare = () => {
                 >
                     <path d="M732 120c0-4.4-3.6-8-8-8H300c-4.4 0-8 3.6-8 8v148h440V120zm120 212H172c-44.2 0-80 35.8-80 80v328c0 17.7 14.3 32 32 32h168v132c0 4.4 3.6 8 8 8h424c4.4 0 8-3.6 8-8V772h168c17.7 0 32-14.3 32-32V412c0-44.2-35.8-80-80-80zM664 844H360V568h304v276zm164-360c0 4.4-3.6 8-8 8h-40c-4.4 0-8-3.6-8-8v-40c0-4.4 3.6-8 8-8h40c4.4 0 8 3.6 8 8v40z" />
                 </svg>
-            </button>
+            </button> */}
 
         </div>
     );

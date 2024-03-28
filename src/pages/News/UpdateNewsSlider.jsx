@@ -65,9 +65,9 @@ const UpdateNewsSlider = () => {
             <div style={{ width: '99%', height: '100%' }} className="mx-auto container-fluid">
                 <Slider {...settings}>
                     {latestNews.map((item) => (
-                        <div key={item.index} className="position-relative">
+                        <div key={item.id} className="position-relative">
 
-                            <Link to={`/news/${item.id}`}>
+                            <Link to={`/news/${item.slug}`}>
                                 <div className="img-contain rounded-0">
                                     <img
                                         className='latest-news-img'
@@ -82,7 +82,7 @@ const UpdateNewsSlider = () => {
                                     জাতীয়
                                 </span> */}
                                 {/* Use Link instead of a */}
-                                <Link to={`/news/${item.id}`}
+                                <Link to={`/news/${item.slug}`}
                                     className="text-decoration-none text-white"
 
                                 >

@@ -12,7 +12,7 @@ const RelatedNews = ({ slug }) => {
         const fetchData = async () => {
             try {
                 const response = await callApi('get', `/api/all/related/articles/${slug}?limit=5`);
-                setNews(response);
+                setNews(response.data);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -29,7 +29,7 @@ const RelatedNews = ({ slug }) => {
     }
 
     return (
-        <div className='sticky-top'>
+        <div className='sticky-top' style={{ top: '72px', zIndex: '0' }}>
             <div className="mb-1 mx-auto">
                 <h3
                     className="border-2 border-bottom border-danger"
@@ -57,7 +57,7 @@ const RelatedNews = ({ slug }) => {
                     <div>
                         <Link
                             className="text-decoration-none text-dark"
-                            to={`/news/${newsItem.id}`}
+                            to={`/news/${newsItem.slug}`}
                         >
                             <h6 className="fw-bold">
                                 {newsItem.title}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const FooterMenu = () => {
     return (
-        <div className="mt-3 py-3" style={{ background: '#666666' }}>
+        <div className="mt-3 py-3" style={{ background: '#919191' }}>
             <div className="d-flex flex-wrap gap-2 justify-content-center mb-2">
                 <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/home">Home</Link>
                 <Link className="text-decoration-none text-white fs-5 mx-3 hover" to="/video">Video</Link>

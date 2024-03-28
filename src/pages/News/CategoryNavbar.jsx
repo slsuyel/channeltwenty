@@ -16,12 +16,19 @@ const CategoryNavbar = () => {
     return (
         <nav className="d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4 " style={{ background: '#000028' }}>
             <ul className="justify-content-evenly navbar-nav w-100">
+
+                <li className="nav-item" >
+                    <Link className='nav-link text-white'
+                        to='/news'> প্রচ্ছদ
+                    </Link>
+                </li>
+
                 {reArrCategories.map((category) => (
                     <li className="nav-item" key={category.slug}>
                         {category.children && category.children.length > 0 ? (
 
                             <Dropdown>
-                                <Dropdown.Toggle className='bg-transparent border-0' id={`dropdown-${category.slug}`}>
+                                <Dropdown.Toggle style={{ fontSize: '20px' }} className='bg-transparent border-0' id={`dropdown-${category.slug}`}>
                                     {category.label}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>

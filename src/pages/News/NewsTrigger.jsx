@@ -2,11 +2,16 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+
+// import useNewsByCategory from '../../hooks/useNewsByCategory';
 import useLatest from '../../hooks/useLatest';
+
 
 const NewsTrigger = () => {
     const { latestNews, isLoading, } = useLatest()
+    // const { data: latestNews, loader: isLoading } = useNewsByCategory('news')
 
+    // console.log(latestNews);
     if (isLoading) {
         return null;
     }
@@ -26,7 +31,7 @@ const NewsTrigger = () => {
                         <marquee behavior="scroll" direction="left">
                             {latestNews.map((news) => (
                                 <React.Fragment key={news.id}>
-                                    <Link to={`/news/${news.id}`} className="text-dark mb-2 p-3 text-decoration-none">{news.title}</Link>
+                                    <Link to={`/news/${news.slug}`} className="text-dark mb-2 p-3 text-decoration-none">{news.title}</Link>
                                     <span className="red-dot"></span>
                                 </React.Fragment>
                             ))}

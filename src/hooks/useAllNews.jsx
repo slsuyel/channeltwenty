@@ -29,12 +29,12 @@ import { useQuery } from 'react-query';
 import { callApi } from '../utils/functions';
 
 const useAllNews = () => {
-    const { data: allNews, isLoading, isError, refetch } = useQuery('allNews', fetchAllNews);
+    const { data: allNews = [], isLoading, isError, refetch } = useQuery('allNews', fetchAllNews);
 
     async function fetchAllNews() {
         try {
             const response = await callApi("GET", `/api/articles`);
-            return response;
+            return response.data;
         } catch (error) {
             throw new Error('Error fetching news data');
         }

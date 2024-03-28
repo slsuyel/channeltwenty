@@ -19,6 +19,7 @@
     "quill-image-resize-module-react": "^3.0.0",
     "react-bootstrap": "^2.8.0",
     "react-calendar": "^4.6.1",
+    "react-helmet": "^6.1.0",
     "react-query": "^3.39.3",
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.0",

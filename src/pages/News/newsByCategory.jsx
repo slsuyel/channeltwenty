@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { callApi } from './../../utils/functions';
 import SkeletonLoader from "../../components/Utilites/SkeletonLoader";
+import RelatedNews from "./share/RelatedNews";
 
 const NewsByCategory = () => {
     const { category } = useParams();
@@ -28,7 +29,8 @@ const NewsByCategory = () => {
         return <SkeletonLoader />
     }
 
-    console.log(data);
+
+
     return (
         <div className="row mx-auto my-3">
             <div className='col-md-3'>
@@ -48,7 +50,6 @@ const NewsByCategory = () => {
                             />
                         </div>
                         <div>
-                            {/* Replace <a> with <Link> */}
                             <Link
                                 className="text-decoration-none text-dark"
                                 to={`/news/${newsItem.id}`}
@@ -69,7 +70,7 @@ const NewsByCategory = () => {
                 <div className="row">
                     {data.slice(0, 9).map((newsItem, index) => (
                         <div key={index} className="col-md-4 mb-3">
-                            <Link to={`/news/${newsItem.id}`} className="text-decoration-none text-dark">
+                            <Link to={`/news/${newsItem.slug}`} className="text-decoration-none text-dark">
                                 <img loading="lazy" src={newsItem.banner} alt="" className="img-fluid mb-2" />
                                 <h5 className="fw-bold">{newsItem.title}</h5>
                                 <p style={{ color: "#243ae2" }} className="mb-0">
@@ -82,7 +83,6 @@ const NewsByCategory = () => {
             </div>
 
             <div className='col-md-3'>
-
                 {data.slice(0, 8).map((newsItem, index) => (
                     <div
                         key={index}
@@ -101,7 +101,7 @@ const NewsByCategory = () => {
                             {/* Replace <a> with <Link> */}
                             <Link
                                 className="text-decoration-none text-dark"
-                                to={`/news/${newsItem.id}`}
+                                to={`/news/${newsItem.slug}`}
                             >
                                 <h6 className="fw-bold">
                                     {newsItem.title}
@@ -114,6 +114,16 @@ const NewsByCategory = () => {
                     </div>
                 ))}
             </div>
+
+            <>
+                {data.length == 0 && <div className="card">
+                    <h3 className="text-center py-5 ">No data in this category</h3>
+                    <RelatedNews slug={'obilmbe-gajay-zuddhbirtir-ahwan-janiye-niraptta-prishde-prstab-pas'} />
+                </div>}
+
+            </>
+
+
 
         </div>
     );

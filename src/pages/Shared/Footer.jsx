@@ -12,13 +12,13 @@ const Footer = () => {
     }
 
     return (
-        <footer className="pt-3  w-100 mx-auto" style={{ background: '#FF6666' }}>
+        <footer className="pt-3  w-100 mx-auto" style={{ background: '#f7baba' }}>
 
-            <div className="row w-100 " >
+            <div className="row w-100 mx-auto" >
                 <div className='col-md-2 my-auto text-center'>
                     <img src={footerImg} alt="footerImg" width={100} />
                 </div>
-                <div className='col-md-3 my-auto px-2 '>
+                <div className='col-md-3 my-auto '>
                     <h5>প্রধান উপদেষ্টাঃ মোঃ নাদিম</h5>
                     <h5>
                         সম্পাদক ও প্রকাশক: সোহেল শিকদার জুম্মান
@@ -29,7 +29,7 @@ const Footer = () => {
 
                 <div className="col-md-4 my-auto">
 
-                    <p className="fs-5 m-0 px-2 ">  প্রকাশিত সংবাদ, কলাম, তথ্য, ছবি ইত্যাদি যথাযথ কর্তৃপক্ষের অনুমতি ছাড়া ব্যবহার করা কপিরাইট আইনে দণ্ডনীয় অপরাধ। অনুমোদন ছাড়া এর ব্যবহার পরিলক্ষিত হলে কর্তৃপক্ষ যথাযথ আইনী ব্যবস্থা গ্রহণ করবে।</p>
+                    <p className="fs-5 m-0 ">  প্রকাশিত সংবাদ, কলাম, তথ্য, ছবি ইত্যাদি যথাযথ কর্তৃপক্ষের অনুমতি ছাড়া ব্যবহার করা কপিরাইট আইনে দণ্ডনীয় অপরাধ। অনুমোদন ছাড়া এর ব্যবহার পরিলক্ষিত হলে কর্তৃপক্ষ যথাযথ আইনী ব্যবস্থা গ্রহণ করবে।</p>
 
                 </div>
 

@@ -42,7 +42,7 @@ const LiveVideo = () => {
                             height: '80%'
                         }}
 
-                        allowfullscreen></iframe>
+                        allowFullScreen></iframe>
                 </div>
             </div>
         </div>

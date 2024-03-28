@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCategories from '../../hooks/useCategories';
 import { organizeCategories } from '../../utils/functions';
-
+import logo from '../../assets/images/icon.png';
 
 
 const CategoryCanvas = () => {
@@ -37,11 +37,20 @@ const CategoryCanvas = () => {
 
                     <div>
 
-                        <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_176,h_174/https://www.channeltwenty.com/wp-content/uploads/2022/10/cropped-Untitled-1.jpg" alt="" className="img-circle img-fluid m-2" />
+                        <img src={logo} width={100} alt="" className="img-circle img-fluid m-2" />
                     </div>
 
 
                     <ul className="list-unstyled">
+
+                        <li className='border-bottom border-secondary fs-5 mb-2  text-white '>
+
+                            <Link className='fs-5 mb-2 text-center text-white text-decoration-none'
+                                to='/news'> প্রচ্ছদ
+                            </Link>
+                        </li>
+
+
                         {
                             isLoading ? (
                                 <div>Loading</div>
@@ -54,10 +63,11 @@ const CategoryCanvas = () => {
                                                     {category.label}
                                                 </span>
                                                 <ul className="dropdown-menu ps-2 bg-gradient" style={{ background: '#000028' }}>
+
                                                     {category.children.map((subcategory) => (
                                                         <li key={subcategory.name}>
                                                             <Link className='border-bottom border-secondary fs-5 mb-2 text-center text-white text-decoration-none'
-                                                                to={`/category/${subcategory.slug}`} onClick={toggleOffcanvas}>
+                                                                to={`/news/category/${subcategory.slug}`} onClick={toggleOffcanvas}>
                                                                 {subcategory.label}
                                                             </Link>
                                                         </li>
@@ -65,7 +75,7 @@ const CategoryCanvas = () => {
                                                 </ul>
                                             </div>
                                         ) : (
-                                            <Link className=' fs-5 mb-2 text-center text-white text-decoration-none' to={`/category/${category.slug}`} onClick={toggleOffcanvas}>
+                                            <Link className=' fs-5 mb-2 text-center text-white text-decoration-none' to={`/news/category/${category.slug}`} onClick={toggleOffcanvas}>
                                                 {category.label}
                                             </Link>
                                         )}

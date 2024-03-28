@@ -1,6 +1,6 @@
 
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/images/Bg-logo.png';
+import logo from '../../assets/images/logo.png';
 import './Shared.css';
 import { useState } from 'react';
 
@@ -15,9 +15,9 @@ const NavbarMenu = () => {
 
     return (
         <div className='sticky-top bg-white'>
-            <div className='d-flex justify-content-around py-2  text-white align-items-center'>
+            <div className='d-flex justify-content-between py-2  text-white align-items-center'>
                 <Link to="/" className="navbar-brand d-none d-md-block">
-                    <img src={logo} alt="Logo" style={{ width: '80px' }} />
+                    <img src={logo} alt="Logo" style={{ width: '70px' }} />
                 </Link>
                 <NavLink to="/" className="nav-link  nav-links">Home</NavLink>
                 <NavLink to="/video" className="nav-link  nav-links">Video</NavLink>
@@ -26,10 +26,9 @@ const NavbarMenu = () => {
                 <NavLink to="/archive" className="nav-link  nav-links">Archive</NavLink>
                 <NavLink to="/login" className="nav-link  nav-links">Login</NavLink>
 
-                <div className={`dropdown nav-links ${isDropdownOpen ? 'show' : ''}`}>
+                <div className={`dropdown  ${isDropdownOpen ? 'show' : ''}`}>
                     <button
-
-                        className="border-0 dropdown-toggle  bg-transparent text-white"
+                        className="border-0  bg-transparent fs-4"
                         id="dropdown-search"
                         onClick={handleDropdownToggle}
                     >

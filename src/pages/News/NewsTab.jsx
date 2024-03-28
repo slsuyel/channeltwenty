@@ -58,7 +58,7 @@ const NewsTab = () => {
 
                                     {
                                         latestNews.slice(0, 6).map((item) => <li key={item.id} className=' align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover justify-content-between '>
-                                            <Link to={`/news/${item.id}`} className=' text-dark text-decoration-none'>   {item.title} </Link>
+                                            <Link to={`/news/${item.slug}`} className=' text-dark text-decoration-none'>   {item.title} </Link>
                                             <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                         </li>)
                                     }
@@ -76,7 +76,7 @@ const NewsTab = () => {
 
                                     {
                                         latestNews.slice(0, 6).map((item) => <li key={item.id} className=' align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover justify-content-between '>
-                                            <Link to={`/news/${item.id}`} className=' text-dark text-decoration-none'> জনপ্রিয়  {item.title} </Link>
+                                            <Link to={`/news/${item.slug}`} className=' text-dark text-decoration-none'> জনপ্রিয়  {item.title} </Link>
                                             <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                         </li>)
                                     }

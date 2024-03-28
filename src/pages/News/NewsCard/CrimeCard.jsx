@@ -17,11 +17,11 @@ const CrimeCard = ({ data }) => {
                 </h3>
             </div>
 
-            <div className='col-md-6'>
+            <div className='col-md-6 '>
 
                 {
                     data && data.slice(0, 2).map((news) => <div key={news.id} className=" position-relative">
-                        <Link to={`/news/${news.id}`} >
+                        <Link to={`/news/${news.slug}`} >
 
                             <div className="img-contain">
                                 <img src={news.banner}
@@ -45,7 +45,7 @@ const CrimeCard = ({ data }) => {
                 {data.slice(2, 6).map((news, index) => (
                     <div
                         key={index}
-                        className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
+                        className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1 mb-2"
                         style={{ marginBottom: 2 }}
                     >
                         <div>
@@ -57,7 +57,7 @@ const CrimeCard = ({ data }) => {
                             />
                         </div>
                         <div>
-                            <Link to={`/news/${news.id}`}
+                            <Link to={`/news/${news.slug}`}
                                 className="text-decoration-none text-dark">
                                 <h6 className="fw-normal">
                                     {news.title}
