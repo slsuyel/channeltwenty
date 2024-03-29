@@ -2,16 +2,22 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCategories from '../../hooks/useCategories';
 import { organizeCategories } from '../../utils/functions';
-import logo from '../../assets/images/icon.png';
 
+import logo from '../../assets/images/logo.png';
 
 const CategoryCanvas = () => {
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
     const toggleOffcanvas = () => {
+
+        if (isOffcanvasOpen) {
+            localStorage.setItem('Offcanvas', 1);
+        } else if (!isOffcanvasOpen) {
+            localStorage.setItem('Offcanvas', 2);
+        }
+
         setIsOffcanvasOpen(!isOffcanvasOpen);
     };
     const { categories, isLoading } = useCategories();
-
 
 
     const reArrCategories = categories && organizeCategories(categories);
@@ -20,7 +26,7 @@ const CategoryCanvas = () => {
 
 
     return (
-        <div className='bg-body-secondary d-block d-sm-none me-2 text-end'>
+        <div className='bg-body-secondary d-block d-sm-none me-2 text-end news-menubar-mobile'>
             <button type="button" className="btn btn-danger rounded-0 text-end" onClick={toggleOffcanvas}>
                 <span className="text-white">
                     <i className="fa-solid fa-bars-staggered"></i>
@@ -28,14 +34,14 @@ const CategoryCanvas = () => {
                 </span>
             </button>
 
-            <div className={`w-50 offcanvas offcanvas-start${isOffcanvasOpen ? ' show' : ''}`} tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ background: '#000028' }}>
+            <div className={`w-50 offcanvas offcanvas-start${isOffcanvasOpen ? ' show' : ''}`} tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ background: '#000028', zIndex: '999' }}>
                 <div className="offcanvas-header">
                     <h5 className="offcanvas-title" id="offcanvasExampleLabel"></h5>
                     <button type="button" className="bg-warning btn-close opacity-100 text-reset" onClick={toggleOffcanvas}></button>
                 </div>
                 <div className="offcanvas-body">
 
-                    <div>
+                    <div className='bg-white'>
 
                         <img src={logo} width={100} alt="" className="img-circle img-fluid m-2" />
                     </div>

@@ -33,7 +33,8 @@ import "slick-carousel/slick/slick-theme.css";
 import 'react-quill/dist/quill.snow.css';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ScrollToTop from 'react-scroll-to-top';
+
+// import ScrollToTop from 'react-scroll-to-top';
 
 const queryClient = new QueryClient();
 
@@ -42,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <RouterProvider router={router} />
       <ToastContainer />
-      <ScrollToTop smooth />
+
     </Provider>
   </QueryClientProvider>
 );

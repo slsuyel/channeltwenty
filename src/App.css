@@ -7,6 +7,11 @@ body {
   font-family: 'Bangla', Arial, sans-serif !important;
 }
 
+.bg-red,
+.btn-danger {
+  background-color: #ff0000 !important;
+}
+
 .parent-bg {
   position: relative;
 }
@@ -22,12 +27,23 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  opacity: 0.2;
+  opacity: 0.09;
   z-index: -1;
 }
 
+.news-menubar {
+  background: rgb(0, 0, 40);
+  position: sticky;
+  top: 74px;
+  z-index: 999;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12) !important;
+}
 
-
+.news-menubar-mobile {
+  position: sticky;
+  top: 49px;
+  z-index: 999;
+}
 
 .custom-bg {
   background-image: linear-gradient(270deg,
@@ -125,9 +141,9 @@ body {
 }
 
 .newscard {
-  background-color: #f3f4f6;
+  background-color: #fbfbfb;
   padding: 6px;
-  box-shadow: 0 0 10px #0000003c !important;
+  box-shadow: 0 0 3px #0000003c !important;
 }
 
 .pointer {
@@ -201,7 +217,21 @@ img:hover {
   height: 200px !important;
 }
 
+.footer-div p,
+.editor-name {
+  font-size: 20px;
+}
+
+
+
 @media only screen and (max-width: 767px) {
+
+  .footer-div p,
+  .editor-name {
+    font-size: 15px;
+    text-align: center;
+  }
+
   .latest-news-img {
     height: 300px !important;
   }

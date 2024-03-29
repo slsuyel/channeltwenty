@@ -89,18 +89,23 @@ const Archive = () => {
 
     return (
         <div>
-            <div className='d-flex justify-content-between mx-3 my-2'>
-                <hr className='mt-4 mx-auto' style={{ width: '80%' }} />
-                <div className='text-end' style={{ width: '20%' }}>
-                    <a href="" className='bg-red p-1 p-2 rounded text-decoration-none'>পুরনো সাইট দেখতে ক্লিক করুন</a>
+            <div className='d-flex justify-content-between mx-3 my-2 align-items-center gap-3'>
+                <div className='border-1 border-bottom border-secondary-subtle w-100'>
+
+                </div>
+
+
+                <div>
+                    <a href="" className='text-nowrap bg-red p-1 p-2 rounded text-decoration-none '>পুরনো সাইট দেখতে ক্লিক করুন</a>
                 </div>
             </div>
 
             <div className='row w-100 mx-auto'>
-                <form onSubmit={handleSubmit} className='col-md-9 row'>
+                <form onSubmit={handleSubmit} className='col-md-9 row mx-auto '>
                     <div className="mb-3 col-md-2">
 
                         <Form.Select
+                            className='text-center text-md-start'
                             required
                             id="date"
                             value={selectedDate}
@@ -118,6 +123,7 @@ const Archive = () => {
                     <div className="mb-3 col-md-3">
 
                         <Form.Select
+                            className='text-center text-md-start'
                             required
                             id="month"
                             value={selectedMonth}
@@ -135,6 +141,7 @@ const Archive = () => {
                     <div className="mb-3 col-md-2">
 
                         <Form.Select
+                            className='text-center text-md-start'
                             required
                             id="year"
                             value={selectedYear}
@@ -152,13 +159,14 @@ const Archive = () => {
                     <div className="mb-3 col-md-3">
 
                         <Form.Select
+                            className='text-center text-md-start'
                             required
                             id="option"
                             value={selectedOption}
                             onChange={handleOptionChange}
                         >
-                            <option value="online">অনলাইন সংস্করণ</option>
-                            <option value="print">প্রিন্ট সংস্করণ</option>
+                            <option value="online" selected>অনলাইন সংস্করণ</option>
+                            <option value="print" disabled>প্রিন্ট সংস্করণ</option>
                         </Form.Select>
                     </div>
 

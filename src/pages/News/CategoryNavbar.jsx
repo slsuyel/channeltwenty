@@ -14,7 +14,7 @@ const CategoryNavbar = () => {
     const reArrCategories = organizeCategories(categories);
 
     return (
-        <nav className="d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4 " style={{ background: '#000028' }}>
+        <nav className="rounded news-menubar d-none d-sm-block d-md-block fs-5 navbar-expand-lg p-0 pt-0 px-4 mb-3 ">
             <ul className="justify-content-evenly navbar-nav w-100">
 
                 <li className="nav-item" >

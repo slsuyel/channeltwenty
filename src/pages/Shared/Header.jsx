@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'react-bootstrap'; // Correct import
+import { Modal } from 'react-bootstrap';
 import header from '../../assets/images/banner-logo.png'
 import social from '../../assets/images/social-media.png'
 import HeaderSocial from '../../components/HeaderSocial';
@@ -8,11 +8,16 @@ import SocialIconsMenu from '../../components/SocialIconsMenu';
 const Header = () => {
     const [mobile, setMobile] = useState(false);
 
+
+
     const handleMobileSocial = () => {
         setMobile(!mobile);
     };
 
+
+
     return (
+
         <>
             <div className='w-100 mx-auto custom-bg position-relative'>
                 <div className='text-center '>

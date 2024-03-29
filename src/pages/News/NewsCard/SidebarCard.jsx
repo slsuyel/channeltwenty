@@ -39,7 +39,7 @@ const SidebarCard = ({ tittle, data }) => {
                             <h6 className="fw-bold">
                                 {newsItem.title}
                             </h6>
-                            <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> {newsItem.date}</p>
+                            {/* <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> {newsItem.date}</p> */}
                         </Link>
                     </div>
                 </div>
