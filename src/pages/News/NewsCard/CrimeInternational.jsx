@@ -14,7 +14,7 @@ const CrimeInternational = () => {
 
 
     return (
-        <div className='row w-100 mx-auto align-items-center my-1 '>
+        <div className='row w-100 mx-auto  my-1 '>
             <CrimeCard data={crimeData} />
             <Col6Card data={internationalData} title={'আন্তর্জাতিক'} />
         </div>

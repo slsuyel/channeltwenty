@@ -8,9 +8,9 @@ const Col6Card = ({ title, data }) => {
     // console.log(data);
 
     return (
-        <div className='col-md-6 mx-auto row'>
+        <div className='col-md-6 mx-auto'>
 
-            <div className="mb-1 mx-auto  w-100">
+            <div className=" mx-auto  w-100">
                 <h3
                     className="border-2 border-bottom border-danger"
                     style={{ paddingLeft: 0 }}
@@ -21,7 +21,7 @@ const Col6Card = ({ title, data }) => {
                 </h3>
             </div>
 
-            <div className='row mx-auto w-100'>
+            <div className='row mx-auto w-100 pt-1'>
                 <div className="col-md-6 p-0 mb-3 ">
                     <Link to={`/news/${data[0]?.slug}`} className='text-decoration-none '>
                         <div className="img-contain rounded-1">
@@ -63,9 +63,9 @@ const Col6Card = ({ title, data }) => {
                         data.slice(1, 7).map((news) => <div key={news.id} className='col-md-6 mb-3 shadow-sm'>
                             <Link to={`/news/${news.slug}`} className='text-decoration-none '>
                                 <img src={news.banner} alt="" className='img-fluid'
-                                    style={{ minWidth: '100px', maxWidth: '100px' }}
+                                    style={{ minWidth: '100px', maxWidth: '100%' }}
                                 />
-                                <h6 className='fw-bold mb-0 mt-1 text-dark'> {news.title.slice(0, 40)}...</h6></Link>
+                                <h6 className='fw-bold mb-0 mt-1 text-dark news-title-national'> {news.title.slice(0, 40)}...</h6></Link>
                         </div>)
                     }
 

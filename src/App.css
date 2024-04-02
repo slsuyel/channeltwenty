@@ -246,6 +246,10 @@ img:hover {
 /*  */
 @media only screen and (max-width: 767px) {
 
+  .news-title-national {
+    font-size: 22px;
+  }
+
   .footer-div p,
   .editor-name {
     font-size: 15px;

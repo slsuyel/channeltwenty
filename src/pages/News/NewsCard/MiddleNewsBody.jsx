@@ -59,10 +59,10 @@ const MiddleNewsBody = () => {
 
                     {
                         data.slice(1, 5).map((news) =>
-                            <div key={news.id} className='col-md-6'>
+                            <div key={news.id} className='col-md-6 mb-3'>
                                 <Link to={`/news/${news.slug}`} className='text-decoration-none '>
                                     <img src={news.banner} alt="" className='img-fluid' />
-                                    <h6 className='fw-bold mb-0 mt-1 text-dark'>
+                                    <h6 className='fw-bold mb-0 mt-1 text-dark news-title-national '>
                                         {news.title}
                                     </h6></Link>
                             </div>)

@@ -45,14 +45,14 @@ const CrimeCard = ({ data }) => {
                 {data.slice(2, 6).map((news, index) => (
                     <div
                         key={index}
-                        className="align-items-center d-flex gap-2 newscard p-2 rounded-1"
+                        className="align-items-center d-flex gap-2 newscard p-2 py-1  rounded-1"
                     >
-                        <div >
+                        <div className='w-50'>
                             <img
                                 src={news.banner}
                                 alt=""
                                 className="img-fluid "
-                                style={{ minWidth: '150px', maxWidth: '150px' }}
+                                style={{ minWidth: '120px', maxWidth: '100%' }}
                             />
                         </div>
                         <div>
