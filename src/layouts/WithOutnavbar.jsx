@@ -15,8 +15,17 @@ export default function WithOutnavbar() {
   const location = useLocation()
   const containsNews = location.pathname.includes('/news');
 
+  // function handleCopy(event) {
+  //   event.preventDefault();
+  // }
+
+
   return (
-    <>
+
+
+
+
+    <div className="unselectable" /* onCopy={handleCopy} */>
       <Header />
       <NavbarMenu />
       <NewsTrigger />
@@ -28,6 +37,6 @@ export default function WithOutnavbar() {
       <FooterMenu />
       <Footer />
       <GoToTop />
-    </>
+    </div>
   )
 }

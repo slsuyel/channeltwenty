@@ -13,13 +13,13 @@ const FooterMenu = () => {
             </div>
 
             <div className="d-flex flex-wrap gap-3 justify-content-center">
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login"> জাতীয়</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login"> বাংলাদেশ</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login">অর্থনীতি</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login">আন্তর্জাতিক</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login"> খেলাধূলা</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login"> অপরাধ</Link>
-                <Link className="text-decoration-none text-white f-menu-a hover" to="/login">ভিডিও</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/National"> জাতীয়</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/bangladesh"> বাংলাদেশ</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/ecomomics">অর্থনীতি</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/international">আন্তর্জাতিক</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/sports"> খেলাধূলা</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/news/category/crime"> অপরাধ</Link>
+                <Link className="text-decoration-none text-white f-menu-a hover" to="/video">ভিডিও</Link>
             </div>
 
         </div>

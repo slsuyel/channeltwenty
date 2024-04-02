@@ -1,6 +1,6 @@
 
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/footer-logo.png';
 import './Shared.css';
 import { useState } from 'react';
 

@@ -43,15 +43,15 @@ const RelatedNews = ({ slug }) => {
             {news.map((newsItem, index) => (
                 <div
                     key={index}
-                    className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
+                    className="align-items-center d-flex gap-2 mb-3 newscard p-2 rounded-1"
                     style={{ marginBottom: 2 }}
                 >
-                    <div>
+                    <div className=''>
                         <img
                             src={newsItem.banner}
                             alt=""
                             className="img-fluid mb-1"
-                            width="180px"
+                            style={{ minWidth: '150px', maxWidth: '150px' }}
                         />
                     </div>
                     <div>

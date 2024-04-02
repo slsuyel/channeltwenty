@@ -24,7 +24,7 @@ const NewsTrigger = () => {
                         <div
                             className="d-flex flex-row flex-grow-1 flex-fill justify-content-center   text-white px-1 news"
                         >
-                            <span className="d-flex text-nowrap align-items-center" style={{ backgroundColor: "#FF0000" }}>&nbsp; সর্বশেষ সংবাদ
+                            <span className="d-flex text-nowrap align-items-center bg-red" >&nbsp; সর্বশেষ সংবাদ
                                 : </span>
                             <div className='arrow'></div>
                         </div>

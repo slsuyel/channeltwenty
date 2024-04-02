@@ -14,7 +14,7 @@ const EduSportsEconomy = () => {
     }
 
     return (
-        <div className='row w-100 mx-auto'>
+        <div className='row w-100 mx-auto my-1 '>
             <SidebarCard data={datas} tittle={'শিক্ষা, বিজ্ঞান ও প্রযুক্তি'} />
             <SportsNews />
             <SidebarCard data={data} tittle={'অর্থনীতি'} />

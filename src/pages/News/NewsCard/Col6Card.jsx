@@ -8,7 +8,7 @@ const Col6Card = ({ title, data }) => {
     // console.log(data);
 
     return (
-        <div className='col-md-6'>
+        <div className='col-md-6 mx-auto row'>
 
             <div className="mb-1 mx-auto  w-100">
                 <h3
@@ -22,7 +22,7 @@ const Col6Card = ({ title, data }) => {
             </div>
 
             <div className='row mx-auto w-100'>
-                <div className="col-md-6 p-0">
+                <div className="col-md-6 p-0 mb-3 ">
                     <Link to={`/news/${data[0]?.slug}`} className='text-decoration-none '>
                         <div className="img-contain rounded-1">
                             <img
@@ -41,7 +41,7 @@ const Col6Card = ({ title, data }) => {
                             </h2>
                             <p style={{ color: "#243ae2" }} className='mb-0'>   {data[0]?.date}</p>
 
-                            {/* <p className='fs-6 mb-0 text-secondary'>  নিজস্ব প্রতিনিধি আসন্ন দ্বাদশ জাতীয় সংসদ নির্বাচনে রাজশাহী-২ সদর আসনে আলোচনার শীর্ষে থাকা আওয়ামী লীগের নিজস্ব প্রতিনিধি আসন্ন দ্বাদশ জাতীয় সংসদ নির্বাচনে রাজশাহী-২ সদর আসনে আলোচনার শীর্ষে থাকা আওয়ামী লীগের...</p> */}
+
 
                             <div
                                 className="fs-6 mb-0 text-secondary"
@@ -57,13 +57,15 @@ const Col6Card = ({ title, data }) => {
 
                 </div>
 
-                <div className='col-md-6 mx-auto row'>
+                <div className='col-md-6 mx-auto row '>
 
                     {
-                        data.slice(1, 7).map((news) => <div key={news.id} className='col-md-6'>
+                        data.slice(1, 7).map((news) => <div key={news.id} className='col-md-6 mb-3 shadow-sm'>
                             <Link to={`/news/${news.slug}`} className='text-decoration-none '>
-                                <img src={news.banner} alt="" className='img-fluid' />
-                                <h6 className='fw-bold mb-0 mt-1 text-dark'> {news.title}</h6></Link>
+                                <img src={news.banner} alt="" className='img-fluid'
+                                    style={{ minWidth: '100px', maxWidth: '100px' }}
+                                />
+                                <h6 className='fw-bold mb-0 mt-1 text-dark'> {news.title.slice(0, 40)}...</h6></Link>
                         </div>)
                     }
 

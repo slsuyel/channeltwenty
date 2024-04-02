@@ -70,7 +70,7 @@ export default function DashHome() {
                             </div>
                         </div>
                         <div className="col-lg-3">
-                            <div className="small-box bg-danger">
+                            <div className="small-box bg-red">
                                 <div className="inner">
                                     <h3>100</h3>
                                     <p>All Users</p>

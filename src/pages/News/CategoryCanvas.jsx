@@ -22,7 +22,9 @@ const CategoryCanvas = () => {
 
     const reArrCategories = categories && organizeCategories(categories);
 
-
+    if (isLoading) {
+        return null
+    }
 
 
     return (

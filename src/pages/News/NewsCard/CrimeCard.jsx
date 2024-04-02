@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CrimeCard = ({ data }) => {
     return (
-        <div className='col-md-6 row'>
+        <div className='col-md-6 row mx-auto'>
 
             <div className="mb-1 mx-auto  w-100">
                 <h3
@@ -20,7 +20,7 @@ const CrimeCard = ({ data }) => {
             <div className='col-md-6 '>
 
                 {
-                    data && data.slice(0, 2).map((news) => <div key={news.id} className=" position-relative">
+                    data && data.slice(0, 3).map((news) => <div key={news.id} className=" position-relative">
                         <Link to={`/news/${news.slug}`} >
 
                             <div className="img-contain">
@@ -45,24 +45,23 @@ const CrimeCard = ({ data }) => {
                 {data.slice(2, 6).map((news, index) => (
                     <div
                         key={index}
-                        className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1 mb-2"
-                        style={{ marginBottom: 2 }}
+                        className="align-items-center d-flex gap-2 newscard p-2 rounded-1"
                     >
-                        <div>
+                        <div >
                             <img
                                 src={news.banner}
                                 alt=""
-                                className="img-fluid mb-1"
-                                width="180px"
+                                className="img-fluid "
+                                style={{ minWidth: '150px', maxWidth: '150px' }}
                             />
                         </div>
                         <div>
                             <Link to={`/news/${news.slug}`}
                                 className="text-decoration-none text-dark">
                                 <h6 className="fw-normal">
-                                    {news.title}
+                                    {news.title.slice(0, 45)}...
                                 </h6>
-                                <p style={{ color: '#0004f4' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
+                                <p style={{ color: '#0004f4', fontSize: '14px' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
                                     {news.date}</p>
                             </Link>
                         </div>

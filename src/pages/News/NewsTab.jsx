@@ -34,7 +34,7 @@ const NewsTab = () => {
             <Nav tabs className=' justify-content-between' >
                 <NavItem className='w-50'>
                     <NavLink
-                        className={`pointer rounded-0 ${activeTab === '1' ? 'active bg-danger' : ''}`}
+                        className={`pointer rounded-0 ${activeTab === '1' ? 'activeTab bg-red' : ''}`}
                         onClick={() => toggleTab('1')}
                     >
                         সর্বশেষ
@@ -42,7 +42,7 @@ const NewsTab = () => {
                 </NavItem >
                 <NavItem className='w-50'>
                     <NavLink
-                        className={`pointer rounded-0 ${activeTab === '2' ? 'active bg-danger' : ''}`}
+                        className={`pointer rounded-0 ${activeTab === '2' ? 'activeTab bg-red' : ''}`}
                         onClick={() => toggleTab('2')}
                     >
                         জনপ্রিয়

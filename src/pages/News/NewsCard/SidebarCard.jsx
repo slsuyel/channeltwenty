@@ -19,15 +19,15 @@ const SidebarCard = ({ tittle, data }) => {
             {data?.slice(0, 5).map((newsItem, index) => (
                 <div
                     key={index}
-                    className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
-                    style={{ marginBottom: 2 }}
+                    className="align-items-center d-flex gap-2 mb-3 newscard p-2 rounded-1"
+
                 >
                     <div>
                         <img
                             src={newsItem.banner}
                             alt=""
                             className="img-fluid mb-1 rounded-1"
-                            width="180px"
+                            style={{ minWidth: '120px', maxWidth: '120px' }}
                         />
                     </div>
                     <div>

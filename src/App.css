@@ -9,7 +9,7 @@ body {
 
 .bg-red,
 .btn-danger {
-  background-color: #ff0000 !important;
+  background-color: #EC1E24 !important;
 }
 
 .parent-bg {
@@ -56,7 +56,7 @@ body {
 
 
 .primary-bg {
-  background: #fe0000;
+  background: #EC1E24;
 }
 
 .img-fluid {
@@ -143,6 +143,7 @@ body {
 .newscard {
   background-color: #fbfbfb;
   padding: 6px;
+  margin-bottom: 16px;
   box-shadow: 0 0 3px #0000003c !important;
 }
 
@@ -164,7 +165,7 @@ body {
   border-radius: 7px !important;
   padding: 6px 8px !important;
   height: 39px !important;
-  background: red !important;
+  background: #EC1E24 !important;
   margin: 2px !important;
   text-align: center !important;
   width: 140px !important;
@@ -186,7 +187,8 @@ body {
 }
 
 .hover:hover {
-  color: red;
+  color: #ec1e24 !important;
+
 }
 
 
@@ -222,14 +224,36 @@ img:hover {
   font-size: 20px;
 }
 
+.f-menu-a {
+  font-size: 22px;
+}
 
 
+
+
+.unselectable {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+
+/*  */
 @media only screen and (max-width: 767px) {
 
   .footer-div p,
   .editor-name {
     font-size: 15px;
     text-align: center;
+  }
+
+  .f-menu-a {
+    font-size: 15px;
   }
 
   .latest-news-img {
@@ -241,7 +265,6 @@ img:hover {
     margin-left: -300px !important;
     margin-top: 15px;
   }
-
 
   .nav-links {
     border-radius: 5px !important;

@@ -6,7 +6,7 @@ import RightSideAdd from '../../AddsItems/RightSideAdd';
 const MiddleCard = () => {
     return (
         <div>
-            <div className='row w-100 mx-auto'>
+            <div className='row w-100 mx-auto my-1 '>
                 <LeftSideAdds />
                 <MiddleNewsBody />
                 <RightSideAdd />

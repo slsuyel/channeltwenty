@@ -14,10 +14,10 @@ const MiddleNewsBody = () => {
     // console.log(data);
 
     return (
-        <div className='col-md-6'>
+        <div className='col-md-6' style={{ background: '#fbfbfb' }}>
             <MiddleAdd title={'  R. N. TRADING LIMITED'} />
 
-            <div className="mb-1 mx-auto  w-100">
+            <div className="mb-1 mx-auto  w-100" >
                 <h3
                     className="border-2 border-bottom border-danger"
                     style={{ paddingLeft: 0 }}
