@@ -11,7 +11,7 @@ const MiddleNewsBody = () => {
     if (loader) {
         return <SkeletonLoader />
     }
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className='col-md-6'>

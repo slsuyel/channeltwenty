@@ -80,7 +80,7 @@ const LiveVideo = () => {
     const videoHeight = isMobile ? '100%' : '80%';
 
     return (
-        <div className='container-fluid my-4'>
+        <div className='my-2'>
             <div className='d-flex justify-content-center'>
                 {!videoLoaded && (
                     <div>
@@ -100,7 +100,7 @@ const LiveVideo = () => {
                 >
                     <iframe
                         onLoad={handleVideoLoad}
-                        className='mx-auto'
+                        className='mx-auto '
                         width={videoWidth}
                         height={videoHeight}
                         src="https://www.youtube.com/embed/moQtMet7F7w?si=xGROhaNReRUKmwPJ?autoplay=1&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

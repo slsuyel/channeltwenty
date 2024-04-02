@@ -7,6 +7,7 @@ import FooterMenu from '../pages/Home/FooterMenu/FooterMenu'
 import CategoryNavbar from '../pages/News/CategoryNavbar'
 import CategoryCanvas from '../pages/News/CategoryCanvas'
 import { GoToTop } from 'go-to-top-react'
+import NewsTrigger from '../pages/News/NewsTrigger'
 
 
 export default function WithOutnavbar() {
@@ -18,6 +19,7 @@ export default function WithOutnavbar() {
     <>
       <Header />
       <NavbarMenu />
+      <NewsTrigger />
       {containsNews && <> <CategoryNavbar />
         <CategoryCanvas /> </>}
       <div className='parent-bg'>

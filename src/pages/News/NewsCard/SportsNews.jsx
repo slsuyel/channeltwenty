@@ -28,7 +28,7 @@ const SportsNews = () => {
 
 
             {
-                data.slice(0, 6).map((news) => <div key={data.id} className='col-md-4'>
+                data.slice(0, 6).map((news) => <div key={news.id} className='col-md-4'>
                     <div>
                         <img src={news.banner} alt="" className='img-fluid' />
                         <Link to={`/news/${news.slug}`} className='text-decoration-none text-dark mb-1'> <h5>{news.title}</h5></Link>

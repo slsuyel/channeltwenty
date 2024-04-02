@@ -50,7 +50,7 @@ const NewsTab = () => {
                 </NavItem>
             </Nav>
             <TabContent activeTab={activeTab}>
-                <TabPane tabId="1">
+                <TabPane className='border-0' tabId="1">
                     <Row>
                         <Col sm="12" className='bg-white'>
                             <div>
@@ -68,22 +68,18 @@ const NewsTab = () => {
                         </Col>
                     </Row>
                 </TabPane>
-                <TabPane tabId="2">
+                <TabPane className='border-0' tabId="2">
                     <Row>
                         <Col sm="12" className='bg-white'>
                             <div>
                                 <ul className='p-0'>
 
                                     {
-                                        latestNews.slice(0, 6).map((item) => <li key={item.id} className=' align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2 onhover justify-content-between '>
+                                        latestNews.slice(0, 6).map((item) => <li key={item.id} className=' align-items-center border-bottom border-danger d-flex list-unstyled my-3 pb-2 px-2  justify-content-between '>
                                             <Link to={`/news/${item.slug}`} className=' text-dark text-decoration-none'> জনপ্রিয়  {item.title} </Link>
                                             <span><i className="border border-2 border-danger fa-chevron-right fa-solid p-1 px-2 rounded-circle text-danger"></i></span>
                                         </li>)
                                     }
-
-
-
-
 
                                 </ul>
                             </div>

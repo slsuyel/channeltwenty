@@ -35,16 +35,16 @@ const CategoryCanvas = () => {
             </button>
 
             <div className={`w-50 offcanvas offcanvas-start${isOffcanvasOpen ? ' show' : ''}`} tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ background: '#000028', zIndex: '999' }}>
-                <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasExampleLabel"></h5>
+                <div className="justify-content-around offcanvas-header p-0 ">
+                    <img src={logo} width={80} alt="" className="img-circle img-fluid m-2" />
                     <button type="button" className="bg-warning btn-close opacity-100 text-reset" onClick={toggleOffcanvas}></button>
                 </div>
-                <div className="offcanvas-body">
+                <div className="offcanvas-body mt-1">
 
-                    <div className='bg-white'>
+                    {/* <div className='mb-5'>
 
                         <img src={logo} width={100} alt="" className="img-circle img-fluid m-2" />
-                    </div>
+                    </div> */}
 
 
                     <ul className="list-unstyled">
@@ -62,7 +62,7 @@ const CategoryCanvas = () => {
                                 <div>Loading</div>
                             ) : (
                                 reArrCategories.map((category) => (
-                                    <li className='border-bottom border-secondary fs-5 mb-2  text-white ' key={category.name}>
+                                    <li className='border-bottom border-secondary fs-5 mb-2  text-white ' key={category.id}>
                                         {category.children && category.children.length > 0 ? (
                                             <div>
                                                 <span className="dropdown-toggle" data-toggle="dropdown">
@@ -71,7 +71,7 @@ const CategoryCanvas = () => {
                                                 <ul className="dropdown-menu ps-2 bg-gradient" style={{ background: '#000028' }}>
 
                                                     {category.children.map((subcategory) => (
-                                                        <li key={subcategory.name}>
+                                                        <li key={subcategory.id}>
                                                             <Link className='border-bottom border-secondary fs-5 mb-2 text-center text-white text-decoration-none'
                                                                 to={`/news/category/${subcategory.slug}`} onClick={toggleOffcanvas}>
                                                                 {subcategory.label}

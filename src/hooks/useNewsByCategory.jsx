@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { callApi } from '../utils/functions';
 
-const useNewsByCategory = (category) => {
+const useNewsByCategory = (category = '') => {
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
 

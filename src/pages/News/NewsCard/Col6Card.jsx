@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Col6Card = ({ title, data }) => {
 
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className='col-md-6'>
