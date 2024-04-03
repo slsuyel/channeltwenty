@@ -18,10 +18,15 @@ const Footer = () => {
                 <div className='col-md-2 my-auto text-center'>
                     <img src={footerImg} alt="footerImg" width={100} />
                 </div>
+
+
                 <div className='col-md-3 my-auto '>
-                    <h5 className='editor-name'>প্রধান উপদেষ্টাঃ মোঃ নাদিম</h5>
+                    <h5 className='editor-name'>প্রধান উপদেষ্টাঃ এড. সেলিম সরকার</h5>
                     <h5 className='editor-name'>
-                        সম্পাদক ও প্রকাশক: সোহেল শিকদার জুম্মান
+                        সম্পাদকঃ সোহেল শিকদার জুম্মান
+                    </h5>
+                    <h5 className='editor-name'>
+                        প্রকাশকঃ মোঃ ইসহাক
                     </h5>
                 </div>
 
@@ -59,10 +64,10 @@ const Footer = () => {
                 <div className='align-items-baseline d-flex flex-wrap justify-content-center '>
                     <h6 className='text-white mb-0'>কপিরাইট © {convertToBanglaYear(new Date().getFullYear())} সকল স্বত্ব www.channeltwenty.com সংরক্ষিত </h6>
 
-                    <Link className='border border-2 border-bottom-0 border-top-0 border-white mx-2 px-2 text-decoration-none text-white'>আমাদের সম্পর্কে</Link>
-                    <Link className='border border-2 border-start-0  border-bottom-0 border-top-0 border-white pe-2 text-decoration-none text-white'>গোপনীয়তা নীতি</Link>
+                    <Link to='/about' className='border border-2 border-bottom-0 border-top-0 border-white mx-2 px-2 text-decoration-none text-white'>আমাদের সম্পর্কে</Link>
+                    <Link to='/privacy-policy' className='border border-2 border-start-0  border-bottom-0 border-top-0 border-white pe-2 text-decoration-none text-white'>গোপনীয়তা নীতি</Link>
 
-                    <Link className='ps-2 text-decoration-none text-white'>যোগাযোগ</Link>
+                    <Link to='/contact' className='ps-2 text-decoration-none text-white'>যোগাযোগ</Link>
                 </div>
                 <div className='mx-auto '>
                     Developed by  <Link target='_blank' to='http://www.codecursor.com' className=' text-decoration-none text-white '>Code Cursor </Link>

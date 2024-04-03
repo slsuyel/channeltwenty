@@ -76,13 +76,26 @@ const NewsByCategory = () => {
 
                 {
                     data.length >= 0 && data.slice(1, 7).map((news) => (
-                        <div key={news.id} className="col-md-6 my-2">
-                            <Link to={`/news/${news.slug}`} className="text-dark text-decoration-none">
-                                <div className="d-flex p-2 rounded" style={{ backgroundColor: '#fdebeb' }}>
-                                    <h5 className="w-50">{news.title}</h5>
-                                    <img src={news.banner} alt="" className="img-fluid w-50" />
+                        <div key={news.id} className="col-md-6 m-auto my-1 ">
+
+                            <Link to={`/news/${news.slug}`} className="text-dark text-decoration-none ">
+                                <div className="d-flex rounded newscard m-0 gap-2 " >
+                                    <div>
+                                        <h5 className="mb-0">{news.title}</h5>
+                                        <p style={{ color: '#0004f4', fontSize: '14px' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
+                                            {news.date}</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src={news.banner}
+                                            alt=""
+                                            className="common-image"
+                                        />
+
+                                    </div>
                                 </div>
                             </Link>
+
                         </div>
                     ))
                 }
@@ -94,10 +107,14 @@ const NewsByCategory = () => {
 
 
                 {
-                    data.slice(7, 17).map((news) => <div key={news.id} className="col-md-3 my-2 d-none d-md-block d-lg-block" >
+                    data.slice(7, 17).map((news) => <div key={news.id} className="col-md-3 my-1 d-none d-md-block d-lg-block" >
                         <Link to={`/news/${news.slug}`} className="text-dark text-decoration-none ">
-                            <div className="d-flex flex-column-reverse rounded " style={{ backgroundColor: '#fdebeb' }}>
-                                <h6 className="p-2"> {news.title}</h6>
+                            <div className="d-flex flex-column-reverse rounded newscard" >
+                                <div>
+                                    <h6 className="p-2"> {news.title}</h6>
+                                    <p style={{ color: '#0004f4', fontSize: '14px' }} className='mb-0'><i className="fas fa-clock me-1 opacity-75"></i>
+                                        {news.date}</p>
+                                </div>
                                 <img src={news.banner} alt="" className="img-fluid rounded-0" style={{ height: '92px' }} />
                             </div>
                         </Link>
@@ -141,7 +158,6 @@ const NewsByCategory = () => {
                                         </React.Fragment>
                                     ))}
 
-
                                 </h6>
                                 <Link
                                     className="text-decoration-none text-dark"
@@ -150,6 +166,10 @@ const NewsByCategory = () => {
                                     <h6 className="fw-bold">
                                         {newsItem.title}
                                     </h6>
+                                    <p style={{ color: '#0004f4', fontSize: '14px' }} className='mb-0'>
+                                        <i className="fas fa-clock me-1 opacity-75"></i>
+                                        {new Date(newsItem.date).toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                    </p>
 
                                 </Link>
                             </div>

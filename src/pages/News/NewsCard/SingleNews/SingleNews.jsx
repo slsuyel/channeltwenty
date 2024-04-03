@@ -32,64 +32,74 @@ const SingleNews = () => {
 
 
 
+    // if (loading) {
+    //     return <SkeletonLoader />
+    // }
+
 
 
     return (
         <>
 
-            <div className="w-100 mx-auto container-fluid">
+            <div className="w-100 mx-auto row container-fluid">
 
-                {
-                    loading ? <SkeletonLoader /> : <><div className="container-fluid my-2 border-bottom border-2">
-                        <p className="mb-0 category-tittle fs-6">
-                            {news?.categories && news.categories.length > 0
-                                ? news.categories.map((item, index) => (
-                                    <span key={index}>
-                                        {item.label}
-                                        {index !== news.categories.length - 1 ? "," : ""}
-                                    </span>
-                                ))
-                                : null}
-                        </p>
-                        <h2 className="fs-2 my-2">{news?.title}</h2>
-                        <div className="align-items-center d-flex flex-wrap justify-content-between mb-3">
-                            <p className="mb-0">
-                                প্রকাশ:{news.date}
+                <div className="col-md-8">
+                    {
+                        loading ? <SkeletonLoader /> : <>
+                            <div className="my-2 border-bottom border-2">
+                                <p className="mb-0 category-tittle fs-6">
+                                    {news?.categories && news.categories.length > 0
+                                        ? news.categories.map((item, index) => (
+                                            <span key={index}>
+                                                {item.label}
+                                                {index !== news.categories.length - 1 ? "," : ""}
+                                            </span>
+                                        ))
+                                        : null}
+                                </p>
+                                <h2 className="fs-2 my-2">{news?.title}</h2>
+                                <div className="align-items-center d-flex flex-wrap justify-content-between mb-3 me-2">
+                                    <p className="mb-0">
+                                        <span className="fs-5 text-secondary"> {news.author}</span>
+                                        <br />
+                                        প্রকাশ:{news.date}
+                                    </p>
+                                    <SocialShare title={news.title} slug={news.slug} />
+                                </div>
+                            </div>
 
-                            </p>
-                            <SocialShare title={news.title} slug={news.slug} />
-                        </div>
-                    </div>
-                        <div className="mx-auto row w-100 my-4 bg-white">
-                            <div className="col-md-8 col-sm-12 col-xl-8">
-                                <img
-                                    src={news.banner}
-                                    alt=""
-                                    className="img-fluid rounded-1 w-100"
-                                    style={{ maxHeight: "400px" }}
-                                />
+                            <div>
+                                <div className="single-news-i text-center ">
+                                    <img
+                                        src={news.banner}
+                                        alt=""
+                                        className="img-fluid rounded-1 "
+                                        style={{ maxHeight: "370px" }}
+                                    />
+                                </div>
+
                                 <div>
                                     <p className="my-3">
                                         <div
                                             className="border lh-base mb-2 p-2 rounded-1 text-secondary" style={{ fontSize: '19px' }}
                                             dangerouslySetInnerHTML={{
-                                                __html: `<p class="d-inline"><span class=" text-secondary">${news.author}: </span>${news.content}</p>`,
+                                                __html: `<p class="d-inline"><span class=" text-secondary"> </span>${news.content}</p>`,
                                             }}
                                         />
                                     </p>
                                 </div>
-                            </div>
-                            <div className="col-sm-12 col-md-4 col-xl-4">
-                                {/* <SideBarAdd img={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9WKH0sDJasNwi0Ce_n39pFrLsmtuTWHjS3F9qCGqbB2XnAdVfATPkl37chgeDc4fKyQ&usqp=CAU'} /> */}
+                            </div></>
+                    }
 
-                                <NewsTab />
-                                <SideBarAdd img={"http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif"} />
-                                <RelatedNews slug={news.slug ? news.slug : 'obilmbe-gajay-zuddhbirtir-ahwan-janiye-niraptta-prishde-prstab-pas'} />
 
-                                {/* <SideBarAdd img={'https://rb.gy/g7tc9g'} /> */}
-                            </div>
-                        </div></>
-                }
+                </div>
+
+                <div className="col-md-4">
+
+                    <NewsTab />
+                    <SideBarAdd img={"http://backend.newsnow24.com/storage/photos/shares/Ads/kishwan.gif"} />
+                    <RelatedNews slug={news.slug ? news.slug : 'obilmbe-gajay-zuddhbirtir-ahwan-janiye-niraptta-prishde-prstab-pas'} />
+                </div>
                 <EduSportsEconomy />
             </div>
 

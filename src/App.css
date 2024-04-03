@@ -228,6 +228,30 @@ img:hover {
   font-size: 22px;
 }
 
+.common-image {
+  width: 228px;
+  height: 80px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.single-news-i {
+  overflow: hidden;
+  position: relative;
+}
+
+.single-news-i img {
+  transition: transform 0.5s ease;
+  /* Adjust the transition timing to make it slower */
+  width: 95%;
+  margin: auto;
+}
+
+.single-news-i img:hover {
+  transform: scale(1.2);
+  /* Adjust the scale factor for zoom effect */
+}
+
 
 
 

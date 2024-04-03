@@ -3,8 +3,8 @@ const Contact = () => {
 
     return (
         <div data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" className="row container w-100 mx-auto mt-5 pt-5">
-            <div className="col-md-6">
+            data-aos-anchor-placement="top-bottom" className="row container w-100 mx-auto mt-5 pt-5">
+            {/* <div className="col-md-6">
                 <form>
                     <div className="form-group">
                         <label htmlFor="name">তোমার নাম *</label>
@@ -62,11 +62,11 @@ const Contact = () => {
                         সেন্ড করো
                     </button>
                 </form>
-            </div>
-            <div className="col-md-6">
+            </div> */}
+            <div className="col-md-6 mx-auto ">
                 <div className="align-items-center d-flex justify-content-between">
                     <div>
-                        <h1 className="fs-4">হেড অফিসের ঠিকানাঃ</h1>
+                        <h1 className="fs-4">হেড অফিস</h1>
                         <h5>৬১, দক্ষিন মালিবাগ,</h5> <h5>ঢাকা- ১২১৭</h5>
                         <h5>Phone: +8800000000000</h5>
                         <h5>Phone: +8800000000000</h5>
@@ -76,11 +76,14 @@ const Contact = () => {
                             src="https://cdn3.iconfinder.com/data/icons/customer-and-technical-support-set-1/64/_call_contact_us_customer_service_customer_support_helpline-11-512.png"
                             width="200px"
                             alt=""
-                        
+
                             className="img-fluid"
                         />
                     </div>
                 </div>
+
+            </div>
+            <div className="col-md-6">
                 <div>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.18784395416!2d90.41078231456152!3d23.740679984594184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b86023ce06ed%3A0x996ffa6238a6a471!2sPanjeree+Publications+Limited!5e0!3m2!1sbn!2sbd!4v1527654083278"
@@ -95,6 +98,8 @@ const Contact = () => {
                     />
                 </div>
             </div>
+
+
         </div>
     );
 };

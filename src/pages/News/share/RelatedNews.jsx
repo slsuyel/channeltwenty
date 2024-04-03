@@ -29,7 +29,7 @@ const RelatedNews = ({ slug }) => {
     }
 
     return (
-        <div className='sticky-top' style={{ top: '72px', zIndex: '0' }}>
+        <div className='sticky-top' style={{ top: '117px', zIndex: '0' }}>
             <div className="mb-1 mx-auto">
                 <h3
                     className="border-2 border-bottom border-danger"

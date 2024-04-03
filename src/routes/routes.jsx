@@ -20,6 +20,10 @@ import UserCheck from "./UserCheck";
 import Category from "../pages/Dashboard/Category/Category";
 
 import NewsByCategory from "./../pages/News/newsByCategory";
+import Contact from "../components/Contact";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
+import AboutUs from "../pages/PrivacyPolicy/AboutUs";
+import SuccessPage from "../pages/Dashboard/Blogs/SuccessPage";
 
 export const router = createBrowserRouter([
     {
@@ -56,6 +60,18 @@ export const router = createBrowserRouter([
                 element: <Login />,
             },
             {
+                path: "/contact",
+                element: <Contact />,
+            },
+            {
+                path: "/privacy-policy",
+                element: <PrivacyPolicy />,
+            },
+            {
+                path: "/about",
+                element: <AboutUs />,
+            },
+            {
                 path: "/news",
                 element: <NewsHome />,
             },
@@ -86,6 +102,10 @@ export const router = createBrowserRouter([
             {
                 path: 'add/news',
                 element: <AddBlog />
+            },
+            {
+                path: 'success-post',
+                element: <SuccessPage />
             },
             {
                 path: 'news',

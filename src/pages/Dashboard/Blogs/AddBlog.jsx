@@ -7,15 +7,17 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { callApi } from '../../../utils/functions';
 import useCategories from '../../../hooks/useCategories';
 import SkeletonLoader from '../../../components/Utilites/SkeletonLoader';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 Quill.register('modules/imageResize', ImageResize);
 
 const AddBlog = () => {
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedCategories, setSelectedCategories] = useState([]);
-
     const [loading, setLoading] = useState(false);
     const { categories, isLoading } = useCategories()
 
@@ -42,9 +44,12 @@ const AddBlog = () => {
             });
 
             if (res.author) {
-                console.log(res.author);
                 setLoading(false)
-                return alert('create news Success ')
+                toast.success(' You have successfully created a news', {
+                    position: toast.POSITION.TOP_CENTER
+                });
+                navigate(`/dashboard/success-post?title=${res.title}&slug=${res.slug}`);
+
             }
 
 
