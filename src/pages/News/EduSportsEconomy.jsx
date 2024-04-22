@@ -7,7 +7,7 @@ import SkeletonLoader from '../../components/Utilites/SkeletonLoader';
 const EduSportsEconomy = () => {
 
     const { data, loader } = useNewsByCategory('ecomomics');
-    const { data: datas, loader: loaders } = useNewsByCategory('শিক্ষা, বিজ্ঞান ও প্রযুক্তি');
+    const { data: datas, loader: loaders } = useNewsByCategory('siksha-oo-bijngan');
 
     if (loader || loaders) {
         return <SkeletonLoader />

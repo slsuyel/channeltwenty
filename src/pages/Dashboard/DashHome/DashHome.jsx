@@ -42,60 +42,7 @@ export default function DashHome() {
                     </div>
                 </div>
             </div>
-            <div className="content">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-lg-3">
-                            <div className="small-box bg-info">
-                                <div className="inner">
-                                    <h3>100</h3>
-                                    <p>unique Student</p>
-                                </div>
-                                <div className="icon">
-                                    <i className=" fas fa-user-plus" />
-                                </div>
 
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="small-box bg-success">
-                                <div className="inner">
-                                    <h3>100</h3>
-                                    <p>Total sells</p>
-                                </div>
-                                <div className="icon">
-                                    <i className="fas fa-shopping-cart" />
-                                </div>
-
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="small-box bg-red">
-                                <div className="inner">
-                                    <h3>100</h3>
-                                    <p>All Users</p>
-                                </div>
-                                <div className="icon">
-                                    <i className="fas fa-users" />
-                                </div>
-
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="small-box bg-warning">
-                                <div className="inner">
-                                    <h3>Loding . . .</h3>
-                                    <p>Today Sell </p>
-                                </div>
-                                <div className="icon">
-                                    <i className="fas fa-calendar " />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </>
     );

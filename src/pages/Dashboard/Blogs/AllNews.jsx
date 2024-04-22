@@ -3,10 +3,11 @@ import useAllNews from "../../../hooks/useAllNews";
 import { callApi } from "../../../utils/functions";
 import SkeletonLoader from './../../../components/Utilites/SkeletonLoader';
 import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 const AllNews = () => {
     const { allNews, isLoading, refetch } = useAllNews();
-
+    const navigate = useNavigate()
     if (isLoading) {
         return <SkeletonLoader />;
     }
@@ -41,9 +42,8 @@ const AllNews = () => {
         }
     };
 
-    const handleView = (id) => {
-        // Handle view action with the id
-        console.log("View clicked for id:", id);
+    const handleView = (s) => {
+        navigate(`/news/${s}`)
     };
 
     return (
@@ -68,14 +68,14 @@ const AllNews = () => {
                             <td>{news.date}</td>
                             <td>
                                 {news.categories.map(category => (
-                                    <span key={category.id}>{category.label}</span>
+                                    <span key={category.id}>{category.label},</span>
                                 ))}
                             </td>
                             <td>
                                 <DropdownButton id="dropdown-basic-button" title="Actions">
                                     <Dropdown.Item onClick={() => handleEdit(news.id)}>Edit</Dropdown.Item>
 
-                                    <Dropdown.Item onClick={() => handleView(news.id)}>View</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleView(news.slug)}>View</Dropdown.Item>
                                     <Dropdown.Item onClick={() => handleDelete(news.id)}>Delete</Dropdown.Item>
                                 </DropdownButton>
                             </td>

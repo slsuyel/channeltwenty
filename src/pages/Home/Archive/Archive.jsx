@@ -96,7 +96,7 @@ const Archive = () => {
 
 
                 <div>
-                    <a href="" className='text-nowrap bg-red p-1 p-2 rounded text-decoration-none '>পুরনো সাইট দেখতে ক্লিক করুন</a>
+                    <a href="" className='text-nowrap bg-red p-1 p-2 rounded text-decoration-none text-white '>পুরনো সাইট দেখতে ক্লিক করুন</a>
                 </div>
             </div>
 
