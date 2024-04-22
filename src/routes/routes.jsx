@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import WithOutnavbar from "../layouts/WithOutnavbar";
-import WithNavbar from "../layouts/WithNavbar";
+
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/Home/Home/Home";
 import Video from "../pages/Home/Video/Video";
@@ -24,6 +24,8 @@ import Contact from "../components/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import AboutUs from "../pages/PrivacyPolicy/AboutUs";
 import SuccessPage from "../pages/Dashboard/Blogs/SuccessPage";
+import DbLayout from "../layouts/DbLayout";
+import Videos from "../pages/Dashboard/Videos/Videos";
 
 export const router = createBrowserRouter([
     {
@@ -93,7 +95,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <UserCheck><WithNavbar /></UserCheck>,
+        element: <UserCheck><DbLayout /></UserCheck>,
         children: [
             {
                 path: '',
@@ -114,6 +116,10 @@ export const router = createBrowserRouter([
             {
                 path: 'category',
                 element: <Category />
+            },
+            {
+                path: 'videos',
+                element: <Videos />
             },
             {
                 path: 'setting',
