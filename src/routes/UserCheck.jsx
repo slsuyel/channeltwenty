@@ -17,7 +17,7 @@ const UserCheck = ({ children }) => {
             }
             try {
                 const response = await callApi("POST", "/api/user/check/login", { token });
-                // console.log(response);
+
                 if (response.message == 'Token is valid') {
                     setAuthenticated(true);
                 } else {

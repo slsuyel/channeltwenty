@@ -4,17 +4,25 @@ import { callApi } from "../../../utils/functions";
 import SkeletonLoader from './../../../components/Utilites/SkeletonLoader';
 import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import useRoleCheck from "../../../routes/useRoleCheck";
 
 const AllNews = () => {
     const { allNews, isLoading, refetch } = useAllNews();
+    const { role, loading } = useRoleCheck()
+
     const navigate = useNavigate()
-    if (isLoading) {
+    if (isLoading || loading) {
         return <SkeletonLoader />;
     }
 
+    if (!role == 'admin') {
+        navigate(`/`)
+    }
+    console.log(role);
+
     const handleEdit = (id) => {
         // Handle edit action with the id
-        console.log("Edit clicked for id:", id);
+        navigate(`/dashboard/edit/${id}`)
     };
 
     const handleDelete = async (id) => {

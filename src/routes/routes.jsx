@@ -26,6 +26,7 @@ import AboutUs from "../pages/PrivacyPolicy/AboutUs";
 import SuccessPage from "../pages/Dashboard/Blogs/SuccessPage";
 import DbLayout from "../layouts/DbLayout";
 import Videos from "../pages/Dashboard/Videos/Videos";
+import EditPost from "../pages/Dashboard/Blogs/EditPost";
 
 export const router = createBrowserRouter([
     {
@@ -112,6 +113,10 @@ export const router = createBrowserRouter([
             {
                 path: 'news',
                 element: <AllNews />
+            },
+            {
+                path: 'edit/:id',
+                element: <EditPost />
             },
             {
                 path: 'category',
