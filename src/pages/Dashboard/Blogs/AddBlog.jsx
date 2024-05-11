@@ -104,7 +104,7 @@ const AddBlog = () => {
             [{ 'header': '1' }, { 'font': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['bold', 'italic', 'underline'],
-            ['link', /* 'image' */],
+            ['link', 'image'],
             [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
             ['clean']
         ],
