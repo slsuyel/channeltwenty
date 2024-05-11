@@ -27,6 +27,7 @@ import SuccessPage from "../pages/Dashboard/Blogs/SuccessPage";
 import DbLayout from "../layouts/DbLayout";
 import Videos from "../pages/Dashboard/Videos/Videos";
 import EditPost from "../pages/Dashboard/Blogs/EditPost";
+import Editor from "../components/ui/Editor";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
+            },
+            {
+                path: "/test",
+                element: <Editor />,
             },
             {
                 path: "/video",

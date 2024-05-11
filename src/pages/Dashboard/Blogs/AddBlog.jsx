@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import ImageResize from 'quill-image-resize-module-react';
+Quill.register('modules/imageResize', ImageResize);
 import Select from 'react-select';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -9,7 +10,6 @@ import useCategories from '../../../hooks/useCategories';
 import SkeletonLoader from '../../../components/Utilites/SkeletonLoader';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-Quill.register('modules/imageResize', ImageResize);
 
 const AddBlog = () => {
     const navigate = useNavigate();
