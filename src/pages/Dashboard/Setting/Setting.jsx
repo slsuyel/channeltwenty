@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
 
-// Import your components
-import SocialMedia from './SocialMedia';
+
 import TeamSetting from './TeamSetting';
+import SocialMedia from './SocialSettings/SocialMedia';
 
 const Setting = () => {
     const [activeComponent, setActiveComponent] = useState(null);
@@ -17,6 +17,8 @@ const Setting = () => {
 
     return (
         <div>
+            <h4 className='mb-5'>Select any settings category</h4>
+
             <div className='d-flex gap-2 '>
                 {buttons.map((button, index) => (
                     <Button type='primary' key={index} onClick={() => handleButtonClick(index)}>
