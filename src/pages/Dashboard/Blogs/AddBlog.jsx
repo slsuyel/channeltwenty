@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import ImageResize from 'quill-image-resize-module-react';
 Quill.register('modules/imageResize', ImageResize);
@@ -20,6 +20,50 @@ const AddBlog = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [loading, setLoading] = useState(false);
     const { categories, isLoading } = useCategories()
+
+    const handleChange = (html) => {
+        console.log(html);
+        setContent(html);
+    }
+    const modules = useMemo(() => ({
+        imageResize: {
+            parchment: Quill.import('parchment'),
+        },
+        toolbar: [
+            [{ 'header': '1' }, { 'font': [] }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'image'],
+            [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
+            ['clean']
+        ],
+        imageUploader: {
+            upload: (file) => {
+                return new Promise((resolve, reject) => {
+                    const formData = new FormData();
+                    formData.append("image", file);
+                    fetch(
+                        "https://api.imgbb.com/1/upload?key=334ecea9ec1213784db5cb9a14dac265",
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    )
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.data && result.data.url) {
+                                resolve(result.data.url);
+                            } else {
+                                reject("Upload failed");
+                            }
+                        })
+                        .catch(error => {
+                            reject("Upload failed", error);
+                        });
+                });
+            }
+        }
+    }), []);
 
 
     // console.log(selectedCategories);
@@ -95,20 +139,6 @@ const AddBlog = () => {
         setSelectedCategories(selectedCategoryIds);
     };
 
-    const modules = {
-        imageResize: {
-            parchment: Quill.import('parchment'),
-
-        },
-        toolbar: [
-            [{ 'header': '1' }, { 'font': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline'],
-            ['link', 'image'],
-            [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
-            ['clean']
-        ],
-    };
 
 
     return (
@@ -152,8 +182,8 @@ const AddBlog = () => {
                 <FormGroup className='bg-white px-2'>
                     <Label className='font-monospace fs-5 text-primary' for="content">Content:</Label>
                     <ReactQuill theme="snow"
-                        style={{ height: '360px', paddingBottom: '61px' }}
-                        value={content} onChange={setContent} modules={modules} />
+                        style={{ height: '80vh', paddingBottom: '61px' }}
+                        value={content} onChange={handleChange} modules={modules} />
                 </FormGroup>
 
                 <Button disabled={loading} color="primary" className='' type="submit">

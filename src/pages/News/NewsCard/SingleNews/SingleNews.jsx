@@ -81,9 +81,9 @@ const SingleNews = () => {
                                 <div>
                                     <p className="my-3">
                                         <div
-                                            className="border lh-base mb-2 p-2 rounded-1 text-secondary" style={{ fontSize: '19px' }}
+                                            className="border lh-base mb-2 p-2 rounded-1 text-secondary sss--nnees" style={{ fontSize: '19px' }}
                                             dangerouslySetInnerHTML={{
-                                                __html: `<p class="d-inline"><span class=" text-secondary"> </span>${news.content}</p>`,
+                                                __html: `<p class="d-inline "><span class=" text-secondary"> </span>${news.content}</p>`,
                                             }}
                                         />
                                     </p>

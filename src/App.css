@@ -7,6 +7,10 @@ body {
   font-family: 'Bangla', Arial, sans-serif !important;
 }
 
+.sss--nnees img {
+  width: 100%;
+}
+
 .bg-red,
 .btn-danger {
   background-color: #EC1E24 !important;

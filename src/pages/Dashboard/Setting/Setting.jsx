@@ -1,49 +1,34 @@
-import React from 'react';
-import { Typography, Form, Input, Button, Divider } from 'antd';
+import React, { useState } from 'react';
+import { Button } from 'antd';
 
-const { Title, } = Typography;
+// Import your components
+import SocialMedia from './SocialMedia';
+import TeamSetting from './TeamSetting';
 
 const Setting = () => {
-    const onFinish = (values) => {
-        console.log('Received values:', values);
-        // Add logic to save settings
+    const [activeComponent, setActiveComponent] = useState(null);
+    const buttons = [
+        { label: 'Social', component: <SocialMedia /> },
+        { label: 'Team', component: <TeamSetting /> },
+    ];
+    const handleButtonClick = (index) => {
+        setActiveComponent(buttons[index].component);
     };
 
     return (
-        <div style={{ maxWidth: '600px', margin: 'auto' }}>
-            <Title level={2}>Settings</Title>
-            <Divider />
-            <Form
-                layout="vertical"
-                onFinish={onFinish}
-            >
-                <Form.Item
-                    label="প্রধান উপদেষ্টা"
-                    name="chiefAdvisor"
-                    rules={[{ required: true, message: 'Please enter the chief advisor!' }]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="সম্পাদক"
-                    name="editor"
-                    rules={[{ required: true, message: 'Please enter the editor!' }]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="প্রকাশক"
-                    name="publisher"
-                    rules={[{ required: true, message: 'Please enter the publisher!' }]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">
-                        Save
+        <div>
+            <div className='d-flex gap-2 '>
+                {buttons.map((button, index) => (
+                    <Button type='primary' key={index} onClick={() => handleButtonClick(index)}>
+                        {button.label}
                     </Button>
-                </Form.Item>
-            </Form>
+                ))}
+            </div>
+
+            <hr />
+            <hr />
+            <div>   {activeComponent}</div>
+
         </div>
     );
 };

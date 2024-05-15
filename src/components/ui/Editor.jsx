@@ -61,9 +61,6 @@ const Editor = () => {
             <ReactQuill
                 onChange={handleChange}
                 theme="snow"
-                style={{
-                    minHeight: "25vh"
-                }}
                 modules={modules}
                 value={content}
             />
