@@ -4,12 +4,16 @@ import { Button } from 'antd';
 
 import TeamSetting from './TeamSetting';
 import SocialMedia from './SocialSettings/SocialMedia';
+import Advertisement from './Advertisement/Advertisement';
+import Pages from './Pages/Pages';
 
 const Setting = () => {
     const [activeComponent, setActiveComponent] = useState(null);
     const buttons = [
         { label: 'Social', component: <SocialMedia /> },
+        { label: 'Advertise', component: <Advertisement /> },
         { label: 'Team', component: <TeamSetting /> },
+        { label: 'Page', component: <Pages /> },
     ];
     const handleButtonClick = (index) => {
         setActiveComponent(buttons[index].component);

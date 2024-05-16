@@ -1,7 +1,8 @@
-import { Button, Modal, Select, Input, message } from 'antd';
+import { Button, Modal, Select, Input, message, Spin } from 'antd';
 import React, { useState } from 'react';
 import useSocialMedia from './../../../../hooks/useSocialMedia';
 import { callApi } from '../../../../utils/functions';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
@@ -65,7 +66,7 @@ const SocialMedia = () => {
     };
 
     if (isLoading) {
-        return null;
+        return <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />;
     }
 
     return (

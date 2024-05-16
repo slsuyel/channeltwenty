@@ -9,7 +9,7 @@ const TeamSetting = () => {
 
 
     return (
-        <div style={{ maxWidth: '600px', margin: 'auto' }}>
+        <div className='col-md-6 mx-auto '>
             <Title level={2}>Settings</Title>
             <Divider />
             <Form

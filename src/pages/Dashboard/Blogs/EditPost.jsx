@@ -17,8 +17,8 @@ const EditPost = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
+    const [author, setAuthor] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedCategories, setSelectedCategories] = useState([]);
 
