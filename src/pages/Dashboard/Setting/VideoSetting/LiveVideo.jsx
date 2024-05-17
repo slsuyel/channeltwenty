@@ -33,6 +33,7 @@ const LiveVideo = () => {
 
     return (
         <div className='border '>
+            <h3 className='text-center my-3'>Live Video</h3>
             <div className="flex">
                 <div className="flex flex-column gap-2">
                     <Button type="primary" onClick={showModal}>

@@ -1,34 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Modal, Dropdown, Menu, Form, Input, Select } from 'antd';
+import { Button, Modal, Dropdown, Menu, Form, Input, Select, message } from 'antd';
 import { DownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import { callApi } from './../../../utils/functions';
 import SkeletonLoader from '../../../components/Utilites/SkeletonLoader';
+import useAllVideoCategories from '../../../hooks/useAllVideoCategories';
+import VideoSetting from '../Setting/VideoSetting/VideoSetting';
 const { Option } = Select;
 const { confirm } = Modal;
 
 const Videos = () => {
+    const { allCategories, isLoading } = useAllVideoCategories()
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const [editModalVisible, setEditModalVisible] = useState(false);
     const [editVideoData, setEditVideoData] = useState(null);
     const [form] = Form.useForm();
-
-    const [categories, setCategories] = useState([]);
-    const fetchCategories = async () => {
-        try {
-            const res = await callApi('get', '/api/video-categories');
-            setCategories(res);
-
-        } catch (error) {
-            console.error('Failed to fetch categories:', error);
-        }
-    };
-
-    useEffect(() => {
-        fetchCategories();
-    }, []);
-
 
     useEffect(() => {
         fetchData();
@@ -60,9 +47,14 @@ const Videos = () => {
         try {
             const values = await form.validateFields();
             const res = await callApi("POST", '/api/videos', values);
-            console.log(res);
-            setModalVisible(false);
-            fetchData();
+            if (res.title) {
+                message.success('Video add')
+                fetchData();
+                setModalVisible(false);
+            }
+            else message.error('failed: Something went wrong,Change the title or reload the page')
+
+
         } catch (errorInfo) {
             console.error('Validation failed:', errorInfo);
         }
@@ -112,7 +104,7 @@ const Videos = () => {
         form.setFieldsValue(record);
     };
 
-    if (loader) {
+    if (loader || isLoading) {
         return <SkeletonLoader />;
     }
 
@@ -127,10 +119,44 @@ const Videos = () => {
 
     return (
         <div>
+
+
+            <hr />
+            <VideoSetting />
+
+            <hr />
+
+            <h3>All Video with category</h3>
+
             <Button type="primary" onClick={showModal} style={{ marginBottom: '20px' }}>
                 <i className="fa-solid fa-video me-2"></i> Add Video
             </Button>
 
+
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map(record => (
+                        <tr key={record.key}>
+                            <td>{record.title}</td>
+                            <td>{record.category_name}</td>
+                            <td>
+                                <Dropdown overlay={() => menu(record)} trigger={['click']}>
+                                    <Button>
+                                        Actions <DownOutlined />
+                                    </Button>
+                                </Dropdown>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
             <Modal
                 title="Add Video"
@@ -148,7 +174,7 @@ const Videos = () => {
                     >
                         <Select placeholder="Select a category">
                             {
-                                categories.length > 0 && categories.map((ct) => <Option key={ct.id} value={ct.slug}>{ct.name}</Option>)
+                                allCategories.length > 0 && allCategories.map((ct) => <Option key={ct.id} value={ct.name}>{ct.name}</Option>)
                             }
 
                         </Select>
@@ -185,7 +211,7 @@ const Videos = () => {
                     >
                         <Select placeholder="Select a category">
                             {
-                                categories.length > 0 && categories.map((ct) => <Option key={ct.id} value={ct.slug}>{ct.name}</Option>)
+                                allCategories.length > 0 && allCategories.map((ct) => <Option key={ct.id} value={ct.slug}>{ct.name}</Option>)
                             }
 
 
@@ -207,30 +233,6 @@ const Videos = () => {
                     </Form.Item>
                 </Form>
             </Modal>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map(record => (
-                        <tr key={record.key}>
-                            <td>{record.title}</td>
-                            <td>{record.category_name}</td>
-                            <td>
-                                <Dropdown overlay={() => menu(record)} trigger={['click']}>
-                                    <Button>
-                                        Actions <DownOutlined />
-                                    </Button>
-                                </Dropdown>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </div>
     );
 };

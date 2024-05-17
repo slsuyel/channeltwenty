@@ -114,8 +114,8 @@ const VideoSetting = () => {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>name</th>
+                                <th>Category</th>
+                                <th>Action</th>
 
                             </tr>
                         </thead>

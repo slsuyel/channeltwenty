@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 
 
-import TeamSetting from './TeamSetting';
+
 import SocialMedia from './SocialSettings/SocialMedia';
-import Advertisement from './Advertisement/Advertisement';
+// import Advertisement from './Advertisement/Advertisement';
 import Pages from './Pages/Pages';
-import VideoSetting from './VideoSetting/VideoSetting';
+// import VideoSetting from './VideoSetting/VideoSetting';
 
 const Setting = () => {
     const [activeComponent, setActiveComponent] = useState(null);
     const buttons = [
         { label: 'Social', component: <SocialMedia /> },
-        { label: 'Advertise', component: <Advertisement /> },
-        { label: 'Team', component: <TeamSetting /> },
+        // { label: 'Advertise', component: <Advertisement /> },
+        // { label: 'Team', component: <TeamSetting /> },
         { label: 'Page', component: <Pages /> },
-        { label: 'Video', component: <VideoSetting /> },
+        // { label: 'Video', component: <VideoSetting /> },
     ];
     const handleButtonClick = (index) => {
         setActiveComponent(buttons[index].component);
