@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import useRoleCheck from '../routes/useRoleCheck';
-import SkeletonLoader from '../components/Utilites/SkeletonLoader';
 
 const { Header, Sider, Content } = Layout;
 
@@ -15,72 +14,96 @@ const routeData = [
     {
         "slug": "/dashboard",
         "icon": "fa-solid fa-home",
-        "text": "Home"
+        "text": "Home",
+        "path": 'selected_articles.filter_by_date',
     },
     {
         "slug": "/dashboard/add/news",
         "icon": "fa-solid fa-folder-plus",
-        "text": "Add News"
+        "text": "Add News",
+        "path": 'articles.store',
     },
     {
         "slug": "/dashboard/news",
         "icon": "fa-solid fa-list",
-        "text": "News"
+        "text": "News",
+        "path": 'articles.index',
     },
     {
         "slug": "/dashboard/category",
         "icon": "fa-solid fa-layer-group",
-        "text": "Category"
+        "text": "Category",
+        "path": 'categories.index',
     },
     {
         "slug": "/dashboard/videos",
         "icon": "fa-solid fa-video",
-        "text": "Video"
+        "text": "Video",
+        "path": 'videos.index',
     },
     {
         "slug": "/dashboard/users",
         "icon": "fa-solid fa-users",
         "text": "Users",
+        "path": 'users.index',
         "submenu": [
             {
                 "slug": "/dashboard/users/all",
-                "text": "All Users"
+                "text": "All Users",
+                "path": 'users.index',
 
             },
             {
                 "slug": "/dashboard/users/create",
-                "text": "Create User"
+                "text": "Create User",
+                "path": 'users.store',
             },
 
             {
                 "slug": "/dashboard/users/role",
-                "text": "Role"
+                "text": "Role",
+                "path": 'role.index',
             }
         ]
     },
     {
         "slug": "/dashboard/setting",
         "icon": "fa-solid fa-gear",
-        "text": "Setting"
+        "text": "Setting",
+        "path": 'setting',
     },
     {
         "slug": "/",
         "icon": "fa-solid fa-house-chimney-user",
-        "text": "Home"
+        "text": "Home",
+        "path": 'setting',
     }
 ];
 
 const DbLayout = () => {
     const [collapsed, setCollapsed] = useState(false);
+
     const { role, loading } = useRoleCheck();
 
-    console.log(role.roles
-        .permissions);
-
-
     if (loading) {
-        return <SkeletonLoader />;
+        return null
     }
+
+    const permissions = role.roles.permissions
+
+    const newArray = routeData.filter(item2 => {
+        if (item2.submenu) {
+            item2.submenu = item2.submenu.filter(subItem => {
+
+                return permissions.some(item1 => item1.path === subItem.path);
+            });
+            return item2.submenu.length > 0;
+        } else {
+            return permissions.some(item1 => item1.path === item2.path);
+        }
+    });
+
+
 
 
 
@@ -98,7 +121,7 @@ const DbLayout = () => {
                     mode="inline"
                     defaultSelectedKeys={['1']}
                 >
-                    {routeData.map((route, index) => (
+                    {newArray.map((route, index) => (
                         route.submenu ? (
                             <Menu.SubMenu
                                 key={index}

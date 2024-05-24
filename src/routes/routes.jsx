@@ -33,6 +33,7 @@ import Users from "../pages/Dashboard/Users/Users";
 import CreateUser from "../pages/Dashboard/Users/CreateUser";
 import RoleManagement from "../pages/Dashboard/Users/RoleManagement";
 import SetPermission from "../pages/Dashboard/Users/SetPermission";
+import AccessDenied from "../components/ui/AccessDenied";
 
 export const router = createBrowserRouter([
     {
@@ -103,6 +104,10 @@ export const router = createBrowserRouter([
             {
                 path: "/news/category/:category",
                 element: <NewsByCategory />,
+            },
+            {
+                path: "/403/forbidden-page",
+                element: <AccessDenied />,
             },
 
 

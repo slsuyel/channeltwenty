@@ -1,17 +1,22 @@
 import Swal from "sweetalert2";
 import useAllNews from "../../../hooks/useAllNews";
-import { callApi } from "../../../utils/functions";
+import { callApi, checkPermit } from "../../../utils/functions";
 import SkeletonLoader from './../../../components/Utilites/SkeletonLoader';
 import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import useRoleCheck from "../../../routes/useRoleCheck";
 
 const AllNews = () => {
     const { allNews, isLoading, refetch } = useAllNews();
+    const { role, loading } = useRoleCheck();
 
     const navigate = useNavigate()
-    if (isLoading) {
+    if (isLoading || loading) {
         return <SkeletonLoader />;
     }
+    const permissions = role.roles.permissions
+
+
 
 
 
@@ -76,8 +81,9 @@ const AllNews = () => {
                             </td>
                             <td>
                                 <DropdownButton id="dropdown-basic-button" title="Actions">
-                                    <Dropdown.Item onClick={() => handleEdit(news.id)}>Edit</Dropdown.Item>
-
+                                    {
+                                        checkPermit(permissions, 'articles.update') ? <Dropdown.Item onClick={() => handleEdit(news.id)}>Edit</Dropdown.Item> : ''
+                                    }
                                     <Dropdown.Item onClick={() => handleView(news.slug)}>View</Dropdown.Item>
                                     <Dropdown.Item onClick={() => handleDelete(news.id)}>Delete</Dropdown.Item>
                                 </DropdownButton>

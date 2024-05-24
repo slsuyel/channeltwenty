@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { baseUrl } from '../baseurl/BaseUrl';
+
 export const callApi = async (method, url, dataObj = [], headers = {}, bUrl = true) => {
     const apiUrl = bUrl ? `${baseUrl}${url}` : `${url}`
     try {
@@ -10,6 +11,11 @@ export const callApi = async (method, url, dataObj = [], headers = {}, bUrl = tr
             data: dataObj,
             headers: headers
         });
+
+        if (response.data.status == 403) {
+            window.location.href = '/403/forbidden-page'
+        }
+
 
         return response.data;
     } catch (error) {
@@ -42,3 +48,11 @@ export const organizeCategories = (categories) => {
 
     return Object.values(organizedCategories);
 };
+
+
+
+export const checkPermit = (permissions, targetPath) => {
+    return permissions.some(item => item.path === targetPath);
+}
+
+
