@@ -16,7 +16,7 @@ const useRoleCheck = () => {
             try {
                 const response = await callApi('POST', '/api/user/check/login', { token });
                 if (response.message === 'Token is valid') {
-                    setRole(response.user.role);
+                    setRole(response.user);
                 }
             } catch (error) {
                 setRole(null);
@@ -27,7 +27,6 @@ const useRoleCheck = () => {
         checkToken();
     }, []);
 
-    // Expose the role and loading state to the component using this hook
     return { role, loading };
 };
 

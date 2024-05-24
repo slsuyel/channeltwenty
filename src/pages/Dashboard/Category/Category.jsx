@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import SkeletonLoader from "../../../components/Utilites/SkeletonLoader";
 
 const Category = () => {
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);

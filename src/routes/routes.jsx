@@ -29,6 +29,10 @@ import Videos from "../pages/Dashboard/Videos/Videos";
 import EditPost from "../pages/Dashboard/Blogs/EditPost";
 import Editor from "../components/ui/Editor";
 import GoogleLoginBtn from "../components/ui/GoogleLoginBtn";
+import Users from "../pages/Dashboard/Users/Users";
+import CreateUser from "../pages/Dashboard/Users/CreateUser";
+import RoleManagement from "../pages/Dashboard/Users/RoleManagement";
+import SetPermission from "../pages/Dashboard/Users/SetPermission";
 
 export const router = createBrowserRouter([
     {
@@ -106,7 +110,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <UserCheck><DbLayout /></UserCheck>,
+        element: <UserCheck><DbLayout /> </UserCheck>,
         children: [
             {
                 path: '',
@@ -136,6 +140,23 @@ export const router = createBrowserRouter([
                 path: 'videos',
                 element: <Videos />
             },
+            {
+                path: 'users/all',
+                element: <Users />
+            },
+            {
+                path: 'users/create',
+                element: <CreateUser />
+            },
+            {
+                path: 'users/role',
+                element: <RoleManagement />
+            },
+            {
+                path: 'users/role/:id',
+                element: <SetPermission />
+            },
+
             {
                 path: 'setting',
                 element: <Setting />

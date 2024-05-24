@@ -10,7 +10,7 @@ import { callApi } from "../../../utils/functions";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useCategories from '../../../hooks/useCategories';
-import useRoleCheck from '../../../routes/useRoleCheck';
+
 Quill.register('modules/imageResize', ImageResize);
 
 const EditPost = () => {
@@ -24,8 +24,6 @@ const EditPost = () => {
 
     const [loading, setLoading] = useState(false);
     const { categories, isLoading } = useCategories()
-    const { role, loading: roleLoad } = useRoleCheck()
-
 
 
 
@@ -52,7 +50,7 @@ const EditPost = () => {
     }, [id]);
 
 
-    if (loading || isLoading || roleLoad) {
+    if (loading || isLoading) {
         return <SkeletonLoader />
     }
 
@@ -136,9 +134,7 @@ const EditPost = () => {
     };
 
 
-    if (!role == 'admin') {
-        navigate(`/`)
-    }
+
     return (
         <div>
             <h4>Edit the article</h4>

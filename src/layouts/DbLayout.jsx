@@ -32,11 +32,31 @@ const routeData = [
         "icon": "fa-solid fa-layer-group",
         "text": "Category"
     },
-
     {
         "slug": "/dashboard/videos",
         "icon": "fa-solid fa-video",
         "text": "Video"
+    },
+    {
+        "slug": "/dashboard/users",
+        "icon": "fa-solid fa-users",
+        "text": "Users",
+        "submenu": [
+            {
+                "slug": "/dashboard/users/all",
+                "text": "All Users"
+
+            },
+            {
+                "slug": "/dashboard/users/create",
+                "text": "Create User"
+            },
+
+            {
+                "slug": "/dashboard/users/role",
+                "text": "Role"
+            }
+        ]
     },
     {
         "slug": "/dashboard/setting",
@@ -48,21 +68,21 @@ const routeData = [
         "icon": "fa-solid fa-house-chimney-user",
         "text": "Home"
     }
-]
+];
 
 const DbLayout = () => {
     const [collapsed, setCollapsed] = useState(false);
-    const { role, loading } = useRoleCheck()
+    const { role, loading } = useRoleCheck();
+
+    console.log(role.roles
+        .permissions);
 
 
     if (loading) {
-        return <SkeletonLoader />
+        return <SkeletonLoader />;
     }
 
-    let filteredRoutes = routeData;
-    if (role === 'reporter') {
-        filteredRoutes = filteredRoutes.filter(route => route.slug === "/dashboard/add/news");
-    }
+
 
     return (
         <Layout>
@@ -78,10 +98,24 @@ const DbLayout = () => {
                     mode="inline"
                     defaultSelectedKeys={['1']}
                 >
-                    {filteredRoutes && filteredRoutes.map((route, index) => (
-                        <Menu.Item key={index} icon={<i className={route.icon}></i>}>
-                            <Link className='text-decoration-none ' to={route.slug}>{route.text}</Link>
-                        </Menu.Item>
+                    {routeData.map((route, index) => (
+                        route.submenu ? (
+                            <Menu.SubMenu
+                                key={index}
+                                icon={<i className={route.icon}></i>}
+                                title={route.text}
+                            >
+                                {route.submenu.map((subItem, subIndex) => (
+                                    <Menu.Item key={`${index}-${subIndex}`}>
+                                        <Link className='text-decoration-none' to={subItem.slug}>{subItem.text}</Link>
+                                    </Menu.Item>
+                                ))}
+                            </Menu.SubMenu>
+                        ) : (
+                            <Menu.Item key={index} icon={<i className={route.icon}></i>}>
+                                <Link className='text-decoration-none' to={route.slug}>{route.text}</Link>
+                            </Menu.Item>
+                        )
                     ))}
                 </Menu>
             </Sider>
@@ -114,6 +148,6 @@ const DbLayout = () => {
             </Layout>
         </Layout>
     );
-}
+};
 
 export default DbLayout;
