@@ -27,7 +27,6 @@ const AccessDenied = () => {
 
 
 
-
         </div>
     );
 }

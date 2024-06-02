@@ -4,11 +4,16 @@ import LiveVideo from "./LiveVideo";
 // import Trigger from "./Trigger";
 
 const Home = () => {
+
+
+
+
     return (
         <div>
             {/* <Trigger /> */}
             {/* <NewsTrigger /> */}
             <LiveVideo />
+
             <div className="text-center">
                 <MiddleAdd />
             </div>
