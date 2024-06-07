@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
 
-
-
 import SocialMedia from './SocialSettings/SocialMedia';
 // import Advertisement from './Advertisement/Advertisement';
 import Pages from './Pages/Pages';
