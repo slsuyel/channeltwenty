@@ -18,8 +18,6 @@ const LiveVideo = () => {
     const fetchLiveVideo = async () => {
       try {
         const response = await callApi('GET', `/api/live_video/last`);
-        console.log(response);
-
         setUrl(response.video_url);
         setIsLoading(false);
       } catch (error) {
@@ -94,6 +92,7 @@ const LiveVideo = () => {
           </div>
         )}
       </div>
+
       {!newsLoad && (
         <div className="container-fluid">
           <div className="fs-5 py-1 row text-dark">
@@ -106,17 +105,18 @@ const LiveVideo = () => {
                   <div className="arrow"></div>
                 </div>
                 <marquee behavior="scroll" direction="left">
-                  {latestNews.map(news => (
-                    <React.Fragment key={news.id}>
-                      <Link
-                        to={`/news/${news.slug}`}
-                        className="text-dark mb-2 p-3 text-decoration-none"
-                      >
-                        {news.title}
-                      </Link>
-                      <span className="red-dot"></span>
-                    </React.Fragment>
-                  ))}
+                  {latestNews &&
+                    latestNews.map(news => (
+                      <React.Fragment key={news.id}>
+                        <Link
+                          to={`/news/${news.article.slug}`}
+                          className="text-dark mb-2 p-3 text-decoration-none"
+                        >
+                          {news.article.title}
+                        </Link>
+                        <span className="red-dot"></span>
+                      </React.Fragment>
+                    ))}
                 </marquee>
               </div>
             </div>

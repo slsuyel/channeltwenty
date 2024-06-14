@@ -24,23 +24,36 @@
 
 // export default useAllNews;
 
-
 import { useQuery } from 'react-query';
 import { callApi } from '../utils/functions';
+import { useLocation } from 'react-router-dom';
 
 const useAllNews = () => {
-    const { data: allNews = [], isLoading, isError, refetch } = useQuery('allNews', fetchAllNews);
+  /* /api/selected-articles */
+  const location = useLocation();
 
-    async function fetchAllNews() {
-        try {
-            const response = await callApi("GET", `/api/articles`);
-            return response.data;
-        } catch (error) {
-            throw new Error('Error fetching news data');
-        }
+  const url =
+    location.pathname === '/dashboard/selected/all'
+      ? '/api/selected-articles'
+      : '/api/articles';
+
+  const {
+    data: allNews = [],
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery('allNews', fetchAllNews, location);
+
+  async function fetchAllNews() {
+    try {
+      const response = await callApi('GET', url);
+      return response.data;
+    } catch (error) {
+      throw new Error('Error fetching news data');
     }
+  }
 
-    return { allNews, isLoading, isError, refetch };
+  return { allNews, isLoading, isError, refetch };
 };
 
 export default useAllNews;

@@ -6,12 +6,14 @@ import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useRoleCheck from '../../../routes/useRoleCheck';
 
-const AllNews = () => {
+const AllSelected = () => {
   const { allNews, isLoading, refetch } = useAllNews();
   const { role, loading } = useRoleCheck();
 
+  console.log(allNews);
+
   const navigate = useNavigate();
-  if (isLoading || loading) {
+  if (loading) {
     return <SkeletonLoader />;
   }
   const permissions = role.roles.permissions;
@@ -21,8 +23,8 @@ const AllNews = () => {
     navigate(`/dashboard/edit/${id}`);
   };
 
-  const handleDelete = async id => {
-    // Show confirmation dialog
+  const handleDelete = async date => {
+    console.log(date);
     const result = await Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this news article!',
@@ -35,7 +37,10 @@ const AllNews = () => {
 
     if (result.isConfirmed) {
       try {
-        const res = await callApi('DELETE', `/api/articles/${id}`);
+        const res = await callApi(
+          'DELETE',
+          `/api/selected-article/delete-by-date?date=${date}`
+        );
         console.log(res);
         refetch();
         Swal.fire('Deleted!', 'The news article has been deleted.', 'success');
@@ -62,52 +67,50 @@ const AllNews = () => {
             <th>Title</th>
             <th>Author</th>
             <th>Date</th>
-            <th>Categories</th>
+
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {allNews.map(news => (
-            <tr key={news.id}>
-              <td>
-                <img
-                  src={news.banner}
-                  alt={news.title}
-                  style={{ width: '100px' }}
-                />
-              </td>
-              <td>{news.title}</td>
-              <td>{news.author}</td>
-              <td>{news.date}</td>
-              <td>
-                {news.length > 0 &&
-                  news.categories.map(category => (
-                    <span key={category.id}>{category.label},</span>
-                  ))}
-              </td>
-              <td>
-                <DropdownButton id="dropdown-basic-button" title="Actions">
-                  {checkPermit(permissions, 'articles.update') ? (
-                    <Dropdown.Item onClick={() => handleEdit(news.id)}>
-                      Edit
+          {!isLoading &&
+            allNews.map(news => (
+              <tr key={news.id}>
+                <td>
+                  <img
+                    src={news?.article?.banner}
+                    alt={news?.article?.title}
+                    style={{ width: '100px' }}
+                  />
+                </td>
+                <td>{news?.article?.title}</td>
+                <td>{news?.article?.author}</td>
+                <td>{news.date}</td>
+
+                <td>
+                  <DropdownButton id="dropdown-basic-button" title="Actions">
+                    {checkPermit(permissions, 'articles.update') ? (
+                      <Dropdown.Item
+                        onClick={() => handleEdit(news?.article?.id)}
+                      >
+                        Edit
+                      </Dropdown.Item>
+                    ) : null}
+                    <Dropdown.Item
+                      onClick={() => handleView(news?.article?.slug)}
+                    >
+                      View
                     </Dropdown.Item>
-                  ) : (
-                    ''
-                  )}
-                  <Dropdown.Item onClick={() => handleView(news.slug)}>
-                    View
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => handleDelete(news.id)}>
-                    Delete
-                  </Dropdown.Item>
-                </DropdownButton>
-              </td>
-            </tr>
-          ))}
+                    <Dropdown.Item onClick={() => handleDelete(news.date)}>
+                      Delete
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
     </div>
   );
 };
 
-export default AllNews;
+export default AllSelected;

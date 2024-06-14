@@ -28,6 +28,26 @@ const routeData = [
     text: 'News',
     path: 'articles.index',
   },
+
+  {
+    slug: '/dashboard/selected',
+    icon: 'fa-solid fa-list',
+    text: 'Selected News',
+    path: 'articles.index',
+    submenu: [
+      {
+        slug: '/dashboard/selected/all',
+        text: 'All Selected',
+        path: 'articles.index',
+      },
+      {
+        slug: '/dashboard/selected/add',
+        text: 'Add Selected',
+        path: 'articles.index',
+      },
+    ],
+  },
+
   {
     slug: '/dashboard/category',
     icon: 'fa-solid fa-layer-group',
