@@ -2,15 +2,10 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-
-// import useNewsByCategory from '../../hooks/useNewsByCategory';
 import useLatest from '../../hooks/useLatest';
 
 const NewsTrigger = () => {
   const { latestNews, isLoading } = useLatest();
-  // const { data: latestNews, loader: isLoading } = useNewsByCategory('news')
-
-  // console.log(latestNews);
   if (isLoading) {
     return null;
   }

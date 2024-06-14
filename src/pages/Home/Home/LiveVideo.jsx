@@ -1,9 +1,13 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState, useEffect, useRef } from 'react';
 import { callApi } from '../../../utils/functions';
 import ReactPlayer from 'react-player';
-import NewsTrigger from '../../News/NewsTrigger';
+
+import useSelectedNews from '../../../hooks/useSelectedNews';
+import { Link } from 'react-router-dom';
 
 const LiveVideo = () => {
+  const { latestNews, isLoading: newsLoad } = useSelectedNews();
   const [isMobile, setIsMobile] = useState(false);
   const [url, setUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +47,7 @@ const LiveVideo = () => {
   const videoWidth = isMobile ? '100%' : '80%';
   const videoHeight = isMobile ? '100%' : '80%';
 
-  console.log(url);
+  console.log(latestNews);
 
   return (
     <div className="">
@@ -90,7 +94,35 @@ const LiveVideo = () => {
           </div>
         )}
       </div>
-      <NewsTrigger />
+      {!newsLoad && (
+        <div className="container-fluid">
+          <div className="fs-5 py-1 row text-dark">
+            <div className="col-md-12">
+              <div className="align-items-center d-flex justify-content-between">
+                <div className="d-flex flex-row flex-grow-1 flex-fill justify-content-center   text-white px-1 news">
+                  <span className="d-flex text-nowrap align-items-center bg-red">
+                    &nbsp; নির্বাচিত সংবাদ :{' '}
+                  </span>
+                  <div className="arrow"></div>
+                </div>
+                <marquee behavior="scroll" direction="left">
+                  {latestNews.map(news => (
+                    <React.Fragment key={news.id}>
+                      <Link
+                        to={`/news/${news.slug}`}
+                        className="text-dark mb-2 p-3 text-decoration-none"
+                      >
+                        {news.title}
+                      </Link>
+                      <span className="red-dot"></span>
+                    </React.Fragment>
+                  ))}
+                </marquee>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
