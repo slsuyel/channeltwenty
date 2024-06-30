@@ -32,17 +32,17 @@ const routeData = [
   {
     slug: '/dashboard/selected',
     icon: 'fa-solid fa-list',
-    text: 'Selected News',
+    text: 'Video Advertise',
     path: 'articles.index',
     submenu: [
       {
         slug: '/dashboard/selected/all',
-        text: 'All Selected',
+        text: ' Advertise List',
         path: 'articles.index',
       },
       {
         slug: '/dashboard/selected/add',
-        text: 'Add Selected',
+        text: 'Add Advertise',
         path: 'articles.index',
       },
     ],

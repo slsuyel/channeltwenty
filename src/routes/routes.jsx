@@ -76,11 +76,11 @@ export const router = createBrowserRouter([
         element: <Archive />,
       },
       {
-        path: '/login',
+        path: '/admin',
         element: <Login />,
       },
       {
-        path: '/g-login',
+        path: '/login',
         element: <GoogleLoginBtn />,
       },
       {
