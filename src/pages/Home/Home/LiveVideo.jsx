@@ -45,8 +45,6 @@ const LiveVideo = () => {
   const videoWidth = isMobile ? '100%' : '80%';
   const videoHeight = isMobile ? '100%' : '80%';
 
-  console.log(latestNews);
-
   return (
     <div className="">
       <div className="d-flex justify-content-center">

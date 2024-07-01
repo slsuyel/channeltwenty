@@ -28,7 +28,7 @@ import DbLayout from '../layouts/DbLayout';
 import Videos from '../pages/Dashboard/Videos/Videos';
 import EditPost from '../pages/Dashboard/Blogs/EditPost';
 import Editor from '../components/ui/Editor';
-import GoogleLoginBtn from '../components/ui/GoogleLoginBtn';
+
 import Users from '../pages/Dashboard/Users/Users';
 import CreateUser from '../pages/Dashboard/Users/CreateUser';
 import RoleManagement from '../pages/Dashboard/Users/RoleManagement';
@@ -36,6 +36,7 @@ import SetPermission from '../pages/Dashboard/Users/SetPermission';
 import AccessDenied from '../components/ui/AccessDenied';
 import AllSelected from '../pages/Dashboard/Selected/AllSelected';
 import AddSelected from '../pages/Dashboard/Selected/AddSelected';
+import Register from '../components/ui/Register';
 
 export const router = createBrowserRouter([
   {
@@ -81,7 +82,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <GoogleLoginBtn />,
+        element: <Register />,
       },
       {
         path: '/contact',

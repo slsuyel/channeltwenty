@@ -1,7 +1,14 @@
+import React from 'react';
+
 const GoogleLoginBtn = () => {
   return (
-    <div style={{ height: '100vh' }}>
-      <h1>This is Login page</h1>
+    <div className="text-center">
+      <button className="btn btn-danger m-2">
+        <i className="fab fa-google mr-2"></i> Google Login
+      </button>
+      <button className="btn btn-primary m-2">
+        <i className="fab fa-facebook-f mr-2"></i> Facebook Login
+      </button>
     </div>
   );
 };
