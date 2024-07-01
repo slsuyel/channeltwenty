@@ -23,8 +23,7 @@ import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes/routes';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'slick-carousel/slick/slick.css';
@@ -32,22 +31,17 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'react-quill/dist/quill.snow.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import AuthProviders from './providers/AuthProviders';
 
 // import ScrollToTop from 'react-scroll-to-top';
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <GoogleOAuthProvider
-    clientId="477212017482-qlp3cm4lnhqlidhi24s66gh1ptpsh6r1.apps.googleusercontent.com
-"
-  >
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <RouterProvider router={router} />
-        <ToastContainer />
-      </Provider>
-    </QueryClientProvider>
-  </GoogleOAuthProvider>
+  <QueryClientProvider client={queryClient}>
+    <AuthProviders>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </AuthProviders>
+  </QueryClientProvider>
 );
