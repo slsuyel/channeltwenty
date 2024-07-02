@@ -20,7 +20,7 @@ const MiddleAdd = ({ title }) => {
 
       <Link to={`#`}>
         <img
-          width={'100%'}
+          width={'80%'}
           height={180}
           src="https://filestage.io/wp-content/uploads/2023/11/FC-Banner-ad-1024x274.webp"
           alt=""

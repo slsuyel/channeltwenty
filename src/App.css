@@ -13,7 +13,7 @@ body {
 
 .bg-red,
 .btn-danger {
-  background-color: #EC1E24 !important;
+  background-color: #ec1e24 !important;
 }
 
 .parent-bg {
@@ -21,7 +21,7 @@ body {
 }
 
 .parent-bg::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100px;
   left: 53px;
@@ -40,7 +40,8 @@ body {
   position: sticky;
   top: 74px;
   z-index: 999;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12) !important;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
 .news-menubar-mobile {
@@ -50,23 +51,23 @@ body {
 }
 
 .custom-bg {
-  background-image: linear-gradient(270deg,
-      hsl(0deg 0% 100%) 0%,
-      hsl(359deg 100% 66%) 25%,
-      hsl(360deg 100% 52%) 49%,
-      hsl(0deg 100% 63%) 74%,
-      hsl(0deg 0% 100%) 100%);
+  background-image: linear-gradient(
+    270deg,
+    hsl(0deg 0% 100%) 0%,
+    hsl(359deg 100% 66%) 25%,
+    hsl(360deg 100% 52%) 49%,
+    hsl(0deg 100% 63%) 74%,
+    hsl(0deg 0% 100%) 100%
+  );
 }
 
-
 .primary-bg {
-  background: #EC1E24;
+  background: #ec1e24;
 }
 
 .img-fluid {
   border-radius: 5px;
 }
-
 
 .social-icons {
   margin-top: 10px;
@@ -79,13 +80,11 @@ body {
   padding: 4px 6px;
   font-size: 23px;
   box-shadow: 0px -9px 9px 0px rgba(250, 254, 33, 0.87);
-
 }
 
 .social-icons i {
   transition: color 0.3s ease;
 }
-
 
 .social-icons a {
   background: white;
@@ -103,7 +102,6 @@ body {
   background-color: red;
   border-radius: 50%;
 }
-
 
 .active {
   background-color: aqua;
@@ -123,11 +121,11 @@ body {
   /* height: 377px !important; */
   height: auto;
   display: block;
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .overlay {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -136,7 +134,7 @@ body {
   z-index: 0;
   background: linear-gradient(to bottom, transparent, transparent, black);
   opacity: 1;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .title-text {
@@ -156,20 +154,19 @@ body {
 }
 
 .bg-nil {
-  background: #33CCCC;
+  background: #33cccc;
 }
 
 .form-control:focus,
 .form-select:focus {
-
-  box-shadow: 0 0 0 0.035rem rgba(13, 110, 253, .25) !important;
+  box-shadow: 0 0 0 0.035rem rgba(13, 110, 253, 0.25) !important;
 }
 
 .nav-links {
   border-radius: 7px !important;
   padding: 6px 8px !important;
   height: 39px !important;
-  background: #EC1E24 !important;
+  background: #ec1e24 !important;
   margin: 2px !important;
   text-align: center !important;
   width: 140px !important;
@@ -184,18 +181,13 @@ body {
   color: black;
 }
 
-
-
 .hover {
   transition: color 0.3s ease;
 }
 
 .hover:hover {
   color: #ec1e24 !important;
-
 }
-
-
 
 img {
   transition: transform 0.3s ease-in-out;
@@ -210,7 +202,7 @@ img:hover {
   height: 0;
   border-top: 18px solid transparent;
   border-bottom: 18px solid transparent;
-  border-left: 18px solid #FF0000;
+  border-left: 18px solid #ff0000;
 }
 
 .search-btn {
@@ -256,9 +248,6 @@ img:hover {
   /* Adjust the scale factor for zoom effect */
 }
 
-
-
-
 .unselectable {
   -webkit-user-select: none;
   /* Safari */
@@ -281,7 +270,6 @@ button.mute_bt_yt {
 
 /*  */
 @media only screen and (max-width: 767px) {
-
   button.mute_bt_yt {
     position: absolute;
     top: 0;
@@ -323,5 +311,37 @@ button.mute_bt_yt {
     text-align: center !important;
     font-size: 14px !important;
     height: 28px !important;
+  }
+}
+
+.tv_brek_n {
+  position: absolute;
+  bottom: 65px;
+  width: 72% !important;
+  z-index: 1;
+  background: antiquewhite;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  left: 182px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+  .tv_brek_n {
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    background: antiquewhite;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    left: 20px;
+    width: 90% !important;
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-right: none;
   }
 }

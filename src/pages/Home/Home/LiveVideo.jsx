@@ -45,8 +45,12 @@ const LiveVideo = () => {
   const videoWidth = isMobile ? '100%' : '80%';
   const videoHeight = isMobile ? '100%' : '80%';
 
+  if (newsLoad) {
+    return null;
+  }
+
   return (
-    <div className="">
+    <div className="position-relative">
       <div className="d-flex justify-content-center">
         {isLoading ? (
           <div>
@@ -91,36 +95,34 @@ const LiveVideo = () => {
         )}
       </div>
 
-      {!newsLoad && (
-        <div className="container-fluid">
-          <div className="fs-5 py-1 row text-dark">
-            <div className="col-md-12">
-              <div className="align-items-center d-flex justify-content-between">
-                <div className="d-flex flex-row flex-grow-1 flex-fill justify-content-center   text-white px-1 news">
-                  <span className="d-flex text-nowrap align-items-center bg-red">
-                    &nbsp; নির্বাচিত সংবাদ :{' '}
-                  </span>
-                  <div className="arrow"></div>
-                </div>
-                <marquee behavior="scroll" direction="left">
-                  {latestNews &&
-                    latestNews.map(news => (
-                      <React.Fragment key={news.id}>
-                        <Link
-                          to={`/news/${news.article.slug}`}
-                          className="text-dark mb-2 p-3 text-decoration-none"
-                        >
-                          {news.article.title}
-                        </Link>
-                        <span className="red-dot"></span>
-                      </React.Fragment>
-                    ))}
-                </marquee>
+      <div className="container-fluid tv_brek_n">
+        <div className="fs-5 row text-dark">
+          <div className="col-md-12 p-0">
+            <div className="align-items-center d-flex justify-content-between">
+              <div className="d-flex flex-row flex-grow-1 flex-fill justify-content-center   text-white news">
+                <span className="d-flex text-nowrap align-items-center bg-red">
+                  &nbsp; সংবাদ :{' '}
+                </span>
+                <div className="arrow"></div>
               </div>
+              <marquee behavior="scroll" direction="left">
+                {latestNews &&
+                  latestNews.map(news => (
+                    <React.Fragment key={news.id}>
+                      <Link
+                        to={`/news/${news.article.slug}`}
+                        className="text-dark mb-2 p-3 text-decoration-none"
+                      >
+                        {news.article.title}
+                      </Link>
+                      <span className="red-dot"></span>
+                    </React.Fragment>
+                  ))}
+              </marquee>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
