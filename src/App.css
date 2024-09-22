@@ -261,22 +261,22 @@ img:hover {
 
 button.mute_bt_yt {
   position: absolute;
-  top: 64px;
-  left: 115px;
-  border: 2px solid #ec1e24;
-  border-radius: 8px;
-  padding: 5px 12px;
+  left: 128px;
+  bottom: 96px;
+  border: none;
+  font-size: 36px;
+
+  background: transparent;
+  color: #ec1e24;
 }
 
 /*  */
 @media only screen and (max-width: 767px) {
   button.mute_bt_yt {
     position: absolute;
-    top: 0;
-    left: 0;
-    border: 2px solid #ec1e24;
-    border-radius: 8px;
-    padding: 5px 12px;
+    bottom: 38px;
+    left: 6px;
+    font-size: 25px;
   }
 
   .news-title-national {

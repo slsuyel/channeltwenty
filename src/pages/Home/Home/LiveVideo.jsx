@@ -85,11 +85,16 @@ const LiveVideo = () => {
               width={videoWidth}
               height={videoHeight}
             />
+
             <button
               className="mute_bt_yt"
               onClick={() => setIsMuted(prevState => !prevState)}
             >
-              {isMuted ? 'Unmute' : 'Mute'}
+              {isMuted ? (
+                <i className="fa-solid fa-volume-low"></i>
+              ) : (
+                <i className="fa-solid fa-volume-xmark"></i>
+              )}
             </button>
           </div>
         )}

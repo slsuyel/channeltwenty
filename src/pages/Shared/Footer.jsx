@@ -77,12 +77,12 @@ const Footer = () => {
             গোপনীয়তা নীতি
           </Link>
 
-          <Link
+          {/* <Link
             to="/contact"
             className="ps-2 text-decoration-none text-white border border-2 border-start-0  border-bottom-0 border-top-0 border-white pe-2"
           >
             যোগাযোগ
-          </Link>
+          </Link> */}
           <Link to="/admin" className="ps-2 text-decoration-none text-white ">
             Admin
           </Link>

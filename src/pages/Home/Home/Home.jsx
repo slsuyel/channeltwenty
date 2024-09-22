@@ -1,24 +1,19 @@
-import MiddleAdd from "../../AddsItems/MiddleAdd";
-// import NewsTrigger from "../../News/NewsTrigger";
-import LiveVideo from "./LiveVideo";
-// import Trigger from "./Trigger";
+import LiveVideo from './LiveVideo';
 
 const Home = () => {
-
-
-
-
-    return (
-        <div>
-            {/* <Trigger /> */}
-            {/* <NewsTrigger /> */}
-            <LiveVideo />
-
-            <div className="text-center">
-                <MiddleAdd />
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <LiveVideo />
+      <div className="text-center">
+        <img
+          style={{ width: '72%' }}
+          src="https://www.pollfish.com/wp-content/uploads/2017/12/Mobile_AD_FORMATS3-1.png"
+          alt=""
+        />
+      </div>
+      <br />
+    </div>
+  );
 };
 
 export default Home;
